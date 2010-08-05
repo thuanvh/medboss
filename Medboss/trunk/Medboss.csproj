@@ -1,0 +1,871 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>{04D0917F-C5D3-4DAA-8428-FC92289227E2}</ProjectGuid>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Nammedia.Medboss.Program</StartupObject>
+    <ApplicationIcon>vulcan.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Medboss.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>Nammedia.Medboss</RootNamespace>
+    <ManifestCertificateThumbprint>9769704C37AD7B7BEBC371C2645126E2BD191A18</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Medboss_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar, Version=4.7.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DevComponents.DotNetBar.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d3e86ca79b67615e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="lib\AutoNumberFormater.cs" />
+    <Compile Include="lib\BanThuocChiTietInfo.cs" />
+    <Compile Include="lib\ChuyenQuayChiTietInfo.cs" />
+    <Compile Include="lib\ChuyenQuayController.cs" />
+    <Compile Include="lib\ChuyenQuayInfo.cs" />
+    <Compile Include="lib\CSController.cs" />
+    <Compile Include="lib\CSInfo.cs" />
+    <Compile Include="lib\DataController.cs" />
+    <Compile Include="lib\DoubleFormater.cs" />
+    <Compile Include="lib\DVT.cs" />
+    <Compile Include="lib\FormatFactory.cs" />
+    <Compile Include="lib\FormatType.cs" />
+    <Compile Include="lib\HoaDonBanThuocController.cs" />
+    <Compile Include="lib\HoaDonBanThuocInfo.cs" />
+    <Compile Include="lib\HoaDonNhapThuocController.cs" />
+    <Compile Include="lib\HoaDonNhapThuocInfo.cs" />
+    <Compile Include="lib\HoaDonThanhToanController.cs" />
+    <Compile Include="lib\HoaDonThanhToanInfo.cs" />
+    <Compile Include="lib\HoaDonTraLaiBanController.cs" />
+    <Compile Include="lib\HoaDonTraLaiInfo.cs" />
+    <Compile Include="lib\HoaDonTraLaiNhapController.cs" />
+    <Compile Include="lib\IFormater.cs" />
+    <Compile Include="lib\IntegerFomater.cs" />
+    <Compile Include="lib\IRefresh.cs" />
+    <Compile Include="lib\KhoanThuChiInfo.cs" />
+    <Compile Include="lib\KiemKeChiTietInfo.cs" />
+    <Compile Include="lib\KiemKeController.cs" />
+    <Compile Include="lib\KiemKeInfo.cs" />
+    <Compile Include="lib\LoaiKhachHang.cs" />
+    <Compile Include="lib\LoaiKiemKeInfo.cs" />
+    <Compile Include="lib\LoaiThuChiController.cs" />
+    <Compile Include="lib\LoaiThuChiInfo.cs" />
+    <Compile Include="lib\LoaiThuocController.cs" />
+    <Compile Include="lib\LoaiThuocInfo.cs" />
+    <Compile Include="lib\MedicineController.cs" />
+    <Compile Include="lib\MedicineInfo.cs" />
+    <Compile Include="lib\MedicineInfoComparerByTenThuoc.cs" />
+    <Compile Include="lib\NhanVienController.cs" />
+    <Compile Include="lib\NhanVienInfo.cs" />
+    <Compile Include="lib\NhapThuocChiTietInfo.cs" />
+    <Compile Include="lib\QuayController.cs" />
+    <Compile Include="lib\QuayInfo.cs" />
+    <Compile Include="lib\QuyController.cs" />
+    <Compile Include="lib\QuyInfo.cs" />
+    <Compile Include="lib\ThanhToanChiTietInfo.cs" />
+    <Compile Include="lib\ThocTonTrongThangController.cs" />
+    <Compile Include="lib\ThuBanHangChiTietInfo.cs" />
+    <Compile Include="lib\ThuBanHangController.cs" />
+    <Compile Include="lib\ThuBanHangInfo.cs" />
+    <Compile Include="lib\ThuocTraoDoi.cs" />
+    <Compile Include="lib\TraLaiChiTietInfo.cs" />
+    <Compile Include="lib\TrimFormater.cs" />
+    <Compile Include="lib\UpperCaseFormater.cs" />
+    <Compile Include="Autocomplete\Array2StringArray.cs" />
+    <Compile Include="Autocomplete\AutoCompleteFactory.cs" />
+    <Compile Include="Autocomplete\AutoCompleter.cs" />
+    <Compile Include="Autocomplete\ComboBoxAutocompleter.cs" />
+    <Compile Include="Autocomplete\DataGridViewComboBoxColumnAutocompleter.cs" />
+    <Compile Include="Autocomplete\DataGridViewTextBoxColumnAutoCompleter.cs" />
+    <Compile Include="Autocomplete\IAutoCompleter.cs" />
+    <Compile Include="Autocomplete\TextBoxAutocompleter.cs" />
+    <Compile Include="report\BanHangChuanParaManager.cs" />
+    <Compile Include="report\ChuyenQuayParaManager.cs" />
+    <Compile Include="report\KiemKeParaManager.cs" />
+    <Compile Include="report\ReportParam.cs" />
+    <Compile Include="report\ReportParaManager.cs" />
+    <Compile Include="report\ReportViewHelper.cs" />
+    <Compile Include="report\ThanhToanCXParaManager.cs" />
+    <Compile Include="report\ThanhToanParaManager.cs" />
+    <Compile Include="report\TongHopParaManager.cs" />
+    <Compile Include="report\TraLaiParaManager.cs" />
+    <Compile Include="Style\AutoSizeRender.cs" />
+    <Compile Include="Style\CommonDataGridViewCellStyle.cs" />
+    <Compile Include="Style\DataGridViewCopyHandler.cs" />
+    <Compile Include="Style\DataGridViewDateTimeCellStyle.cs" />
+    <Compile Include="Style\DataGridViewIntCellStyle.cs" />
+    <Compile Include="Utils\BinHexConverter.cs" />
+    <Compile Include="Utils\ConvertHelper.cs" />
+    <Compile Include="Utils\ThuocUnionMassing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ActiveACSource.cs" />
+    <Compile Include="AdvanceSearcher_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonSource.cs" />
+    <Compile Include="ConditionType.cs" />
+    <Compile Include="controls\AdvanceSearcher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ChuyenQuayUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ChuyenQuayUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ChuyenQuayViewOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\CSInfoUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\CSInfoUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\CSListOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\DataType.cs" />
+    <Compile Include="controls\DateTimePickerVn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ImportOrderUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ImportOrderUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\KiemKeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\KiemKeUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\LoaiDoiTacUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\LoaiKiemKeUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\LoaiThuChiUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\LoaiThuocUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicineListOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicineNoneOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicineOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicineOperatorComplex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicinePriceOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicineUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedicineUnion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MedUIBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\NhanVienListOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\NhanVienUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\NhanVienUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\OperatorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\OperatorState.cs" />
+    <Compile Include="controls\QuayParameter.cs" />
+    <Compile Include="controls\QuaySelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\QuayUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\QuayUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\QuickShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\QuyUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\QuyUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ReportViewOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ReportViewThanhToanCongNoOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\Searcher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\SellOrderOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\SellOrderUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\SpreadSheet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\ThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ThanhToanList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ThanhToanListOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ThanhToanOrderUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ThuBanHangOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ThuocTonUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\TraLaiBanUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\TraLaiBanUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\TraLaiNhapUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\TraLaiNhapUIOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ViewArg.cs" />
+    <Compile Include="controls\ViewFunc.cs" />
+    <Compile Include="DataGridViewDnDEnabler.cs" />
+    <Compile Include="DBDriver.cs" />
+    <Compile Include="DeleteException.cs" />
+    <Compile Include="DeleteFinishHandler.cs" />
+    <Compile Include="ErrorLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="f0_0.cs" />
+    <Compile Include="Favorite\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favorite\FavoriteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favorite\FavoriteTree.cs" />
+    <Compile Include="Favorite\IFavorizable.cs" />
+    <Compile Include="Favorite\NewFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favorite\OperatorFactory.cs" />
+    <Compile Include="Favorite\OperatorNode.cs" />
+    <Compile Include="Favorite\ParamNode.cs" />
+    <Compile Include="Favorite\SaveFunc.cs" />
+    <Compile Include="Favorite\XTreeFolder.cs" />
+    <Compile Include="Favorite\XTreeLeaf.cs" />
+    <Compile Include="Favorite\XTreeNode.cs" />
+    <Compile Include="FieldKey.cs" />
+    <Compile Include="FindField.cs" />
+    <Compile Include="FindKeyParam.cs" />
+    <Compile Include="FindParam.cs" />
+    <Compile Include="IdManager.cs" />
+    <Compile Include="IFinder.cs" />
+    <Compile Include="IFriendlyName.cs" />
+    <Compile Include="IMedbossException.cs" />
+    <Compile Include="InsertException.cs" />
+    <Compile Include="InsertFinishHandler.cs" />
+    <Compile Include="InsertSuccessfulLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntComparer.cs" />
+    <Compile Include="InvalidException.cs" />
+    <Compile Include="IOperator.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperatorArgument.cs" />
+    <Compile Include="OperatorException.cs" />
+    <Compile Include="OperatorFunctionType.cs" />
+    <Compile Include="OperatorType.cs" />
+    <Compile Include="OrderIOInfo.cs" />
+    <Compile Include="ParseResult.cs" />
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Resources1.cs.bak" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="RepayOrderInfo.cs" />
+    <Compile Include="report\reports\exchange\rptChuyenQuayTongHop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptChuyenQuayTongHop.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\exchange\rptSub_ChuyenQuay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSub_ChuyenQuay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\finance\rptQuy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptQuy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\finance\rptQuyTongHop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptQuyTongHop.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\finance\rptQuyTongHopModif.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptQuyTongHopModif.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\finance\rptQuyTongHopTon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptQuyTongHopTon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\finance\rptQuyTongHopTonLech.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptQuyTongHopTonLech.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\finance\rptQuy_Date.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptQuy_Date.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\general\rptTongHopNhapBan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTongHopNhapBan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\general\rptTongHopNhapBanStandard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTongHopNhapBanStandard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\import\rptHangNhap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHangNhap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\import\rptNhapThuocChiTiet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNhapThuocChiTiet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\import\rptNhapThuocKhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNhapThuocKhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\medicine\dvt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dvt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\medicine\rptGiaThuoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGiaThuoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\medicine\rptGiaThuocChart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGiaThuocChart.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\payment\rptThanhToan_ChiTiet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThanhToan_ChiTiet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\payment\rptThanhToan_CongNo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThanhToan_CongNo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\payment\rptThanhToan_QuaTrinh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThanhToan_QuaTrinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\repay\rptTraLai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTraLai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\repay\rptTraLaiChiTiet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTraLaiChiTiet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\repay\rptTraLaiNhaCungCap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTraLaiNhaCungCap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\sale\rptBanThuocChiTiet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBanThuocChiTiet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\sale\rptBanThuocKhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBanThuocKhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\sale\rptHangBan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHangBan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\sale\rptHangBanChuan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHangBanChuan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\sale\rptHangBanChuanDVT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHangBanChuanDVT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\sale\rptThuBanHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThuBanHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\verifier\Copy of rptKiemKe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Copy of rptKiemKe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\verifier\rptHangTon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHangTon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\verifier\rptHangTon_no.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHangTon_no.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\verifier\rptKiemKe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptKiemKe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\reports\exchange\rptChuyenQuayChiTiet1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptChuyenQuayChiTiet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="security\Validator.cs" />
+    <Compile Include="SqlExpression\ConditionType.cs" />
+    <Compile Include="SqlExpression\ConditionTypeComplex.cs" />
+    <Compile Include="SqlExpression\ConditionTypeConstants.cs" />
+    <Compile Include="SqlExpression\ExpressionBuilder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SqlExpression\FieldExpressionBuilder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SqlExpression\SqlExpressionBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SqlExpression\SqlPrimitiveExpression.cs" />
+    <Compile Include="TimeParameter.cs" />
+    <Compile Include="TimeParaser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UnfoundArg.cs" />
+    <Compile Include="UnfoundArgs.cs" />
+    <Compile Include="UnfoundHandler.cs" />
+    <Compile Include="UnfoundType.cs" />
+    <Compile Include="UnknownValueException.cs" />
+    <Compile Include="UnNullValueException.cs" />
+    <Compile Include="UpdateException.cs" />
+    <Compile Include="UpdateFinishHandler.cs" />
+    <Compile Include="ValidateHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdvanceSearcher_2.resources" />
+    <EmbeddedResource Include="controls\AdvanceSearcher.resources" />
+    <EmbeddedResource Include="controls\ChuyenQuayUI.resources" />
+    <EmbeddedResource Include="controls\ChuyenQuayUIOperator.resources" />
+    <EmbeddedResource Include="controls\ChuyenQuayViewOperator.resources" />
+    <EmbeddedResource Include="controls\CSInfoUI.resources" />
+    <EmbeddedResource Include="controls\CSInfoUIOperator.resources" />
+    <EmbeddedResource Include="controls\CSListOperator.resources" />
+    <EmbeddedResource Include="controls\ImportOrderUI.resources" />
+    <EmbeddedResource Include="controls\ImportOrderUIOperator.resources" />
+    <EmbeddedResource Include="controls\KiemKeUI.resources" />
+    <EmbeddedResource Include="controls\KiemKeUIOperator.resources" />
+    <EmbeddedResource Include="controls\Loading.resources" />
+    <EmbeddedResource Include="controls\LoaiDoiTacUIOperator.resources" />
+    <EmbeddedResource Include="controls\LoaiKiemKeUIOperator.resources" />
+    <EmbeddedResource Include="controls\LoaiThuChiUIOperator.resources" />
+    <EmbeddedResource Include="controls\LoaiThuocUIOperator.resources" />
+    <EmbeddedResource Include="controls\MedicineListOperator.resources" />
+    <EmbeddedResource Include="controls\MedicineNoneOperator.resources" />
+    <EmbeddedResource Include="controls\MedicineOperator.resources" />
+    <EmbeddedResource Include="controls\MedicineOperatorComplex.resources" />
+    <EmbeddedResource Include="controls\MedicinePriceOperator.resources" />
+    <EmbeddedResource Include="controls\MedicineUI.resources" />
+    <EmbeddedResource Include="controls\MedicineUnion.resources" />
+    <EmbeddedResource Include="controls\NhanVienListOperator.resources" />
+    <EmbeddedResource Include="controls\NhanVienUI.resources" />
+    <EmbeddedResource Include="controls\NhanVienUIOperator.resources" />
+    <EmbeddedResource Include="controls\QuaySelector.resources" />
+    <EmbeddedResource Include="controls\QuayUI.resources" />
+    <EmbeddedResource Include="controls\QuayUIOperator.resources" />
+    <EmbeddedResource Include="controls\QuickShow.resources" />
+    <EmbeddedResource Include="controls\QuyUI.resources" />
+    <EmbeddedResource Include="controls\QuyUIOperator.resources" />
+    <EmbeddedResource Include="controls\ReportViewOperator.resources" />
+    <EmbeddedResource Include="controls\ReportViewThanhToanCongNoOperator.resources" />
+    <EmbeddedResource Include="controls\Searcher.resources" />
+    <EmbeddedResource Include="controls\SellOrderOperator.resources" />
+    <EmbeddedResource Include="controls\SellOrderUI.resources" />
+    <EmbeddedResource Include="controls\ThanhToan.resources" />
+    <EmbeddedResource Include="controls\ThanhToanList.resources" />
+    <EmbeddedResource Include="controls\ThanhToanListOperator.resources" />
+    <EmbeddedResource Include="controls\ThanhToanOrderUI.resources" />
+    <EmbeddedResource Include="controls\ThuBanHangOperator.resources" />
+    <EmbeddedResource Include="controls\ThuocTonUI.resources" />
+    <EmbeddedResource Include="controls\TraLaiBanUI.resources" />
+    <EmbeddedResource Include="controls\TraLaiBanUIOperator.resources" />
+    <EmbeddedResource Include="controls\TraLaiNhapUI.resources" />
+    <EmbeddedResource Include="controls\TraLaiNhapUIOperator.resources" />
+    <EmbeddedResource Include="Favorite\AboutBox1.resources" />
+    <EmbeddedResource Include="Favorite\FavoriteEditor.resources" />
+    <EmbeddedResource Include="Favorite\NewFolderForm.resources" />
+    <EmbeddedResource Include="MainForm.resources" />
+    <EmbeddedResource Include="Operator.resources" />
+    <EmbeddedResource Include="Password.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources1.resources" />
+    <EmbeddedResource Include="report\reports\exchange\rptChuyenQuayTongHop.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChuyenQuayTongHop.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\exchange\rptSub_ChuyenQuay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSub_ChuyenQuay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\finance\rptQuy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptQuy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\finance\rptQuyTongHop.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptQuyTongHop.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\finance\rptQuyTongHopModif.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptQuyTongHopModif.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\finance\rptQuyTongHopTon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptQuyTongHopTon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\finance\rptQuyTongHopTonLech.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptQuyTongHopTonLech.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\finance\rptQuy_Date.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptQuy_Date.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\general\rptTongHopNhapBan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTongHopNhapBan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\general\rptTongHopNhapBanStandard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTongHopNhapBanStandard.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\import\rptHangNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHangNhap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\import\rptNhapThuocChiTiet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNhapThuocChiTiet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\import\rptNhapThuocKhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNhapThuocKhachHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\medicine\dvt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dvt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\medicine\rptGiaThuoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGiaThuoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\medicine\rptGiaThuocChart.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGiaThuocChart.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\payment\rptThanhToan_ChiTiet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThanhToan_ChiTiet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\payment\rptThanhToan_CongNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThanhToan_CongNo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\payment\rptThanhToan_QuaTrinh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThanhToan_QuaTrinh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\repay\rptTraLai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTraLai.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\repay\rptTraLaiChiTiet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTraLaiChiTiet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\repay\rptTraLaiNhaCungCap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTraLaiNhaCungCap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\sale\rptBanThuocChiTiet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBanThuocChiTiet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\sale\rptBanThuocKhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBanThuocKhachHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\sale\rptHangBan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHangBan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\sale\rptHangBanChuan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHangBanChuan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\sale\rptHangBanChuanDVT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHangBanChuanDVT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\sale\rptThuBanHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThuBanHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\verifier\Copy of rptKiemKe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Copy of rptKiemKe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\verifier\rptHangTon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHangTon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\verifier\rptHangTon_no.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHangTon_no.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\verifier\rptKiemKe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptKiemKe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\exchange\rptChuyenQuayChiTiet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChuyenQuayChiTiet1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlExpression\ExpressionBuilder.resources" />
+    <EmbeddedResource Include="SqlExpression\FieldExpressionBuilder.resources" />
+    <EmbeddedResource Include="SqlExpression\SqlExpressionBuilder.resources" />
+    <EmbeddedResource Include="TimeParaser.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NM.Medboss.exe.licenses" />
+    <None Include="Resources\del.GIF" />
+    <Content Include="Resources\loader.gif" />
+    <Content Include="TreeFavor.xml" />
+    <Content Include="vulcan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Medboss.snk" />
+    <None Include="Medboss_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Nammedia\Medboss\" />
+  </ItemGroup>
+  <Import Condition="" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
