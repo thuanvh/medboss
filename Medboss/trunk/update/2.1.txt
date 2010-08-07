@@ -1,0 +1,9 @@
+﻿--query qryTraLaiChiTiet
+--update 0->1, 1->0
+
+SELECT distinct HoaDonNhapTraLai.Ngay, Quay.TenQuay, Thuoc.TenThuoc, DVT.DVT, HoaDonNhapTraLaiChiTiet.SoLuong, HoaDonNhapTraLaiChiTiet.DonGia, HoaDonNhapTraLaiChiTiet.HanDung, HoaDonNhapTraLaiChiTiet.SoLo, HoaDonNhapTraLaiChiTiet.GhiChu, 0 as ThuHayChi, HoaDonNhapTraLai.MaHoaDon, HoaDonNhapTraLai.TienTraLai, ThuocDVT.MaThuocTraoDoi, LoaiThuoc.MaLoai, LoaiThuoc.TenLoai, KhachHang.Ten AS TenKhachHang, HoaDonNhapTraLai.HoaDonNhapBan, Thuoc.MaThuoc
+FROM (LoaiThuoc INNER JOIN ((Quay INNER JOIN (HoaDonNhapTraLai INNER JOIN HoaDonNhapTraLaiChiTiet ON HoaDonNhapTraLai.MaHoaDon = HoaDonNhapTraLaiChiTiet.MaHoaDon) ON Quay.MaQuay = HoaDonNhapTraLai.MaQuay) INNER JOIN (DVT INNER JOIN (Thuoc INNER JOIN ThuocDVT ON Thuoc.MaThuoc = ThuocDVT.MaThuoc) ON DVT.MaDVT = ThuocDVT.MaDVT) ON HoaDonNhapTraLaiChiTiet.MaThuocTraoDoi = ThuocDVT.MaThuocTraoDoi) ON LoaiThuoc.MaLoai = Thuoc.MaLoaiThuoc) LEFT JOIN KhachHang ON HoaDonNhapTraLai.MaKhachHang = KhachHang.MaKhachHang;
+
+
+UNION SELECT distinct  HoaDonBanTraLai.Ngay, Quay.TenQuay, Thuoc.TenThuoc, DVT.DVT, HoaDonBanTraLaiChiTiet.SoLuong, HoaDonBanTraLaiChiTiet.DonGia, HoaDonBanTraLaiChiTiet.HanDung, HoaDonBanTraLaiChiTiet.SoLo, HoaDonBanTraLaiChiTiet.GhiChu, 1 as  ThuHayChi, HoaDonBanTraLai.MaHoaDon, HoaDonBanTraLai.TienTraLai, ThuocDVT.MaThuocTraoDoi, LoaiThuoc.MaLoai, LoaiThuoc.TenLoai, KhachHang.Ten AS TenKhachHang, HoaDonBanTraLai.HoaDonNhapBan, Thuoc.MaThuoc
+FROM (LoaiThuoc INNER JOIN ((Quay INNER JOIN (HoaDonBanTraLai INNER JOIN HoaDonBanTraLaiChiTiet ON HoaDonBanTraLai.MaHoaDon = HoaDonBanTraLaiChiTiet.MaHoaDon) ON Quay.MaQuay = HoaDonBanTraLai.MaQuay) INNER JOIN (DVT INNER JOIN (Thuoc INNER JOIN ThuocDVT ON Thuoc.MaThuoc = ThuocDVT.MaThuoc) ON DVT.MaDVT = ThuocDVT.MaDVT) ON HoaDonBanTraLaiChiTiet.MaThuocTraoDoi = ThuocDVT.MaThuocTraoDoi) ON LoaiThuoc.MaLoai = Thuoc.MaLoaiThuoc) LEFT JOIN KhachHang ON HoaDonBanTraLai.MaKhachHang = KhachHang.MaKhachHang;
