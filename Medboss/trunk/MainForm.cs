@@ -184,9 +184,11 @@ namespace Nammedia.Medboss
             TreeNode node34 = new TreeNode("Danh mục thuốc", new TreeNode[] { node27, node28, node29, node30, node31, node32, node33 });
             TreeNode node35 = new TreeNode("Nhập th\x00f4ng tin kiểm k\x00ea", 3, 3);
             TreeNode node36 = new TreeNode("Loại kiểm k\x00ea", 3, 3);
-            TreeNode node37 = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea", 1, 1);
+            TreeNode node37 = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea theo tên thuốc", 1, 1);
+            TreeNode nodebaocaokiemkebymakk = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea theo trang", 1, 1);
+            TreeNode nodebaocaokiemkemau = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea mẫu", 1, 1);
             TreeNode node38 = new TreeNode("Thuốc tồn", 3, 3);
-            TreeNode node39 = new TreeNode("Kiểm k\x00ea", new TreeNode[] { node35, node36, node37, node38 });
+            TreeNode node39 = new TreeNode("Kiểm k\x00ea", new TreeNode[] { node35, node36, node37,nodebaocaokiemkebymakk,nodebaocaokiemkemau, node38 });
             TreeNode node40 = new TreeNode("Nhập th\x00f4ng tin lu\x00e2n chuyển", 3, 3);
             TreeNode node41 = new TreeNode("B\x00e1o c\x00e1o lu\x00e2n chuyển thuốc", 1, 1);
             TreeNode nodeBaocaoLuanChuyen = new TreeNode("B\x00e1o c\x00e1o lu\x00e2n chuyển thuốc tổng hợp", 1, 1);
@@ -432,6 +434,12 @@ namespace Nammedia.Medboss
             node37.ImageIndex = 1;
             node37.Name = "ndBaoCaoKiemKe";
             node37.SelectedImageIndex = 1;
+            nodebaocaokiemkebymakk.ImageIndex = 1;
+            nodebaocaokiemkebymakk.Name = "ndBaoCaoKiemKeMaKK";
+            nodebaocaokiemkebymakk.SelectedImageIndex = 1;
+            nodebaocaokiemkemau.ImageIndex = 1;
+            nodebaocaokiemkemau.Name = "ndBaoCaoKiemKeMau";
+            nodebaocaokiemkemau.SelectedImageIndex = 1;
             node38.ImageIndex = 3;
             node38.Name = "ndThuocTon";
             node38.SelectedImageIndex = 3;
@@ -787,6 +795,24 @@ namespace Nammedia.Medboss
                     operator15.ParamManager = new KiemKeParaManager();
                     this.eventBinding(operator15);
                     item = this.AddNewTab(operator15, selectedNode.Name);
+                    break;
+                }
+                case "ndBaoCaoKiemKeMau":
+                {
+                    ReportViewOperator operator15Mau = new ReportViewOperator("BaoCaoKiemKeMau");
+                    operator15Mau.Report = new rptKiemKeMau();
+                    operator15Mau.ParamManager = new KiemKeParaManager();
+                    this.eventBinding(operator15Mau);
+                    item = this.AddNewTab(operator15Mau, selectedNode.Name);
+                    break;
+                }
+                case "ndBaoCaoKiemKeMaKK":
+                {
+                    ReportViewOperator operator15OrderByMaKK = new ReportViewOperator("BaoCaoKiemKeMaKK");
+                    operator15OrderByMaKK.Report = new rptKiemKeOrderByMaKK();
+                    operator15OrderByMaKK.ParamManager = new KiemKeParaManager();
+                    this.eventBinding(operator15OrderByMaKK);
+                    item = this.AddNewTab(operator15OrderByMaKK, selectedNode.Name);
                     break;
                 }
                 case "ndBaoCaoTraLaiThuocChiTiet":
