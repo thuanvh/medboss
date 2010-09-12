@@ -1,6 +1,6 @@
 // Assembly Medboss, Version 1.0.9193.507
 
-[assembly: System.Reflection.AssemblyVersion("2.0.2.507")]
+[assembly: System.Reflection.AssemblyVersion("2.0.2.508")]
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
 [assembly: System.Runtime.InteropServices.Guid("56a5c0bc-80e6-4474-9669-9a3ee4908b86")]
 [assembly: System.Reflection.AssemblyProduct("Medboss")]
@@ -10,7 +10,7 @@
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
 [assembly: System.Reflection.AssemblyTitle("Medboss")]
 [assembly: System.Reflection.AssemblyCompany("Medboss")]
-[assembly: System.Reflection.AssemblyFileVersion("2.0.2.497")]
+[assembly: System.Reflection.AssemblyFileVersion("2.0.2.508")]
 [assembly: System.Reflection.AssemblyCopyright("Copyright \x00a9 Medboss 2006")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)]
 [assembly: System.Reflection.AssemblyTrademark("Medboss")]
