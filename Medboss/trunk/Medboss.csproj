@@ -161,6 +161,18 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="report\reports\verifier\rptKiemKeMau.cs">
+      <DependentUpon>rptKiemKeMau.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="report\reports\verifier\rptKiemKeOrderByMaKK.cs">
+      <DependentUpon>rptKiemKeOrderByMaKK.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="report\ReportViewHelper.cs" />
     <Compile Include="report\ThanhToanCXParaManager.cs" />
     <Compile Include="report\ThanhToanParaManager.cs" />
@@ -811,6 +823,14 @@
     <EmbeddedResource Include="report\reports\sale\rptThuBanHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptThuBanHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\verifier\rptKiemKeMau.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptKiemKeMau.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\verifier\rptKiemKeOrderByMaKK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptKiemKeOrderByMaKK.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\reports\verifier\Copy of rptKiemKe.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
