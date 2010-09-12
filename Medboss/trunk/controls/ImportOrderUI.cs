@@ -727,9 +727,10 @@ namespace Nammedia.Medboss.controls
                 row.Cells[this.colMaThuocTraoDoi.Index].Value = info3.MaThuocTraoDoi;
                 row.Cells[this.colTenThuoc.Index].Value = medicineByMaThuocTraoDoi.TenThuoc;
                 row.Cells[this.colDVT.Index].Value = controller4.GetDVT(info3.MaThuocTraoDoi).TenDV;
-                row.Cells[this.colSoLuong.Index].Value = info3.SoLuong;
-                row.Cells[this.colDonGia.Index].Value = info3.DonGiaNhap;
-                row.Cells[this.colThanhTienNhap.Index].Value = info3.SoLuong * info3.DonGiaNhap;
+                row.Cells[this.colSoLuong.Index].Value = info3.SoLuong;                
+                double dongia=info3.DonGiaNhap<0?0:info3.DonGiaNhap;
+                row.Cells[this.colDonGia.Index].Value = dongia;
+                row.Cells[this.colThanhTienNhap.Index].Value = info3.SoLuong * dongia;
                 row.Cells[this.colThanhTienBan.Index].Value = info3.SoLuong * info3.DonGiaBan;
                 row.Cells[this.colDonGiaBan.Index].Value = info3.DonGiaBan;
                 if (info3.HanDung != DateTime.MinValue)

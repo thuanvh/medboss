@@ -155,6 +155,12 @@
     <Compile Include="report\KiemKeParaManager.cs" />
     <Compile Include="report\ReportParam.cs" />
     <Compile Include="report\ReportParaManager.cs" />
+    <Compile Include="report\reports\general\Copy of rptTongHopNhapBanStandard.cs">
+      <DependentUpon>Copy of rptTongHopNhapBanStandard.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="report\ReportViewHelper.cs" />
     <Compile Include="report\ThanhToanCXParaManager.cs" />
     <Compile Include="report\ThanhToanParaManager.cs" />
@@ -722,6 +728,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptQuy_Date.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\reports\general\Copy of rptTongHopNhapBanStandard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Copy of rptTongHopNhapBanStandard.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="report\reports\general\rptTongHopNhapBan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTongHopNhapBan.cs</LastGenOutput>
@@ -869,4 +879,10 @@
     <Folder Include="Nammedia\Medboss\" />
   </ItemGroup>
   <Import Condition="" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
