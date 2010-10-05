@@ -367,7 +367,7 @@ namespace Nammedia.Medboss.controls
                     }
                 }
             }
-            if ((e.ColumnIndex == this.colThuoc.Index) || (e.ColumnIndex == this.colDVT.Index))
+            if ((e.ColumnIndex == this.colThuoc.Index) || (e.ColumnIndex == this.colDVT.Index) || (e.ColumnIndex==this.colSoLuong.Index))
             {
                 MedicineController controller3 = new MedicineController();
                 string tenThuoc = ConvertHelper.getString(row.Cells[this.colThuoc.Index].Value);
