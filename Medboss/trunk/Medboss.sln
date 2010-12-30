@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medboss", "Medboss.csproj", "{04D0917F-C5D3-4DAA-8428-FC92289227E2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Medboss.Setup", "..\Medboss.Setup\Medboss.Setup.vdproj", "{26421927-221C-41BC-A4D1-DDF06B43E8D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04D0917F-C5D3-4DAA-8428-FC92289227E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D0917F-C5D3-4DAA-8428-FC92289227E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D0917F-C5D3-4DAA-8428-FC92289227E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D0917F-C5D3-4DAA-8428-FC92289227E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Debug|Any CPU.ActiveCfg = Debug
+		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Debug|Any CPU.Build.0 = Debug
+		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Release|Any CPU.ActiveCfg = Release
+		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

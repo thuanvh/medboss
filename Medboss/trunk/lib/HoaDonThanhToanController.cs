@@ -375,7 +375,21 @@ namespace Nammedia.Medboss.lib
 
         protected override void setFields()
         {
-            base.fields = new FindField[] { new FindField("Ma", "Ma", typeof(int)), new FindField("MaThanhToan", "M\x00e3 ho\x00e1 đơn", typeof(int)), new FindField("TenQuay", "Quầy", typeof(string)), new FindField("Ngay", "Ng\x00e0y", typeof(DateTime)), new FindField("TenThuoc", "T\x00ean thuốc", typeof(string)), new FindField("DVT", "ĐVT", typeof(string)), new FindField("SoLuong", "Số lượng", typeof(int)), new FindField("DonGia", "Đơn gi\x00e1 nhập", typeof(int)), new FindField("TenKhachHang", "Nh\x00e0 cung cấp", typeof(string)), new FindField("ChietKhau", "Chiết khấu", typeof(int)), new FindField("TienChietKhau", "Tiền chiết khấu", typeof(int)), new FindField("NgayNhap", "Ng\x00e0y nhập", typeof(DateTime)) };
+            base.fields = new FindField[] { 
+                new FindField("Ma", "Ma", typeof(int)),
+                new FindField("MaThanhToan", "M\x00e3 ho\x00e1 đơn", typeof(int)),
+                new FindField("TenQuay", "Quầy", typeof(string)), 
+                new FindField("Ngay", "Ng\x00e0y", typeof(DateTime)), 
+                new FindField("TenThuoc", "T\x00ean thuốc", typeof(string)), 
+                new FindField("DVT", "ĐVT", typeof(string)), 
+                new FindField("SoLuong", "Số lượng", typeof(int)),
+                new FindField("DonGia", "Đơn gi\x00e1 nhập", typeof(int)),
+                new FindField("TenKhachHang", "Nh\x00e0 cung cấp", typeof(string)),
+                new FindField("ChietKhau", "Chiết khấu", typeof(int)),
+                new FindField("TienChietKhau", "Tiền chiết khấu", typeof(int)), 
+                new FindField("ThanhTienNhap", "Tiền nhập", typeof(int)), 
+                new FindField("TienThucTra", "Tiền trả", typeof(int)), 
+                new FindField("NgayNhap", "Ng\x00e0y nhập", typeof(DateTime)) };
         }
 
         public int Update(HoaDonThanhToanInfo hdtt)
