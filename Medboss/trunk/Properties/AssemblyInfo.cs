@@ -1,6 +1,6 @@
 // Assembly Medboss, Version 1.0.9193.507
 
-[assembly: System.Reflection.AssemblyVersion("2.0.2.508")]
+[assembly: System.Reflection.AssemblyVersion("2.2.*")]
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
 [assembly: System.Runtime.InteropServices.Guid("56a5c0bc-80e6-4474-9669-9a3ee4908b86")]
 [assembly: System.Reflection.AssemblyProduct("Medboss")]

@@ -86,54 +86,61 @@ namespace Nammedia.Medboss
 
         public void RefreshSource()
         {
-            switch (this._activeSource)
+            try
             {
-                case CommonSource.Quay:
-                    this.RefreshQuaySource();
-                    break;
-
-                case CommonSource.Medicine:
-                    this.RefreshMedicineSource();
-                    break;
-
-                case CommonSource.CS:
-                    this.RefreshCSSource();
-                    break;
-
-                case CommonSource.DVT:
-                    this.RefreshDVTSource();
-                    break;
-
-                case CommonSource.NhanVien:
-                    this.RefreshNhanVienSource();
-                    break;
-
-                case CommonSource.NhomCS:
-                    this.RefreshCSTypeSource();
-                    break;
-
-                case CommonSource.LoaiKiemKe:
-                    this.RefreshLoaiKiemKe();
-                    break;
-
-                case CommonSource.LoaiThuChi:
-                    this.RefreshLoaiThuChi();
-                    break;
-
-                case CommonSource.All:
-                    this.RefreshAll();
-                    break;
-
-                case CommonSource.LoaiThuoc:
-                    this.RefreshLoaiThuoc();
-                    break;
-            }
-            foreach (IRefresh refresh in this._refreshList)
-            {
-                if (refresh != null)
+                switch (this._activeSource)
                 {
-                    refresh.Refresh();
+                    case CommonSource.Quay:
+                        this.RefreshQuaySource();
+                        break;
+
+                    case CommonSource.Medicine:
+                        this.RefreshMedicineSource();
+                        break;
+
+                    case CommonSource.CS:
+                        this.RefreshCSSource();
+                        break;
+
+                    case CommonSource.DVT:
+                        this.RefreshDVTSource();
+                        break;
+
+                    case CommonSource.NhanVien:
+                        this.RefreshNhanVienSource();
+                        break;
+
+                    case CommonSource.NhomCS:
+                        this.RefreshCSTypeSource();
+                        break;
+
+                    case CommonSource.LoaiKiemKe:
+                        this.RefreshLoaiKiemKe();
+                        break;
+
+                    case CommonSource.LoaiThuChi:
+                        this.RefreshLoaiThuChi();
+                        break;
+
+                    case CommonSource.All:
+                        this.RefreshAll();
+                        break;
+
+                    case CommonSource.LoaiThuoc:
+                        this.RefreshLoaiThuoc();
+                        break;
                 }
+                foreach (IRefresh refresh in this._refreshList)
+                {
+                    if (refresh != null)
+                    {
+                        refresh.Refresh();
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Nammedia.Medboss.Log.LogManager.LogException(exc);
             }
         }
 
