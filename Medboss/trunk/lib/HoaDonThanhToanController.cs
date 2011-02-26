@@ -29,7 +29,7 @@ namespace Nammedia.Medboss.lib
             {
                 HoaDonNhapThuocInfo info = new HoaDonNhapThuocInfo();
                 info.MaHoaDon = ConvertHelper.getInt(reader[0]);
-                info.MaQuay = (byte) ConvertHelper.getInt(reader[1]);
+                info.MaQuay = (byte)ConvertHelper.getInt(reader[1]);
                 DateTime time = ConvertHelper.getDateTime(reader.GetValue(2));
                 info.Ngay = time;
                 info.MaKhachHang = Convert.ToInt32(reader[3]);
@@ -105,7 +105,7 @@ namespace Nammedia.Medboss.lib
             info.MaHoaDon = -1;
             if (list.Count > 0)
             {
-                return (HoaDonNhapThuocInfo) list[0];
+                return (HoaDonNhapThuocInfo)list[0];
             }
             return info;
         }
@@ -119,7 +119,7 @@ namespace Nammedia.Medboss.lib
             {
                 try
                 {
-                    string qry = "select MaThanhToan,Ngay,MaHoaDonNhap,MaNhanVien,MaKhachHang,MaQuay from HoaDonThanhToan where MaThanhToan=" + MaHoaDon;
+                    string qry = "select MaThanhToan,Ngay,MaHoaDonNhap,MaNhanVien,MaKhachHang,MaQuay,TongTienThanhToan,TongTienChietKhau,TongTienPhaiTra from HoaDonThanhToan where MaThanhToan=" + MaHoaDon;
                     command.CommandText = qry;
                     dr = command.ExecuteReader();
                     while (dr.Read())
@@ -130,6 +130,9 @@ namespace Nammedia.Medboss.lib
                         hdtt.MaNhanVien = ConvertHelper.getInt(dr[3]);
                         hdtt.MaKhachHang = ConvertHelper.getInt(dr[4]);
                         hdtt.MaQuay = ConvertHelper.getInt(dr[5]);
+                        hdtt.TongTienThanhToan = ConvertHelper.getInt(dr[6]);
+                        hdtt.TongTienChietKhau = ConvertHelper.getInt(dr[7]);
+                        hdtt.TongTienPhaiTra = ConvertHelper.getInt(dr[8]);
                     }
                     dr.Close();
                     qry = "select MaThanhToan,MaThuocTraoDoi,SoLuong,DonGia,ChietKhau,TienChietKhau,NgayNhap from HoaDonThanhToanChiTiet where MaThanhToan=" + MaHoaDon;
@@ -277,7 +280,7 @@ namespace Nammedia.Medboss.lib
                 DateTimeFormatInfo dateTimeFormat = new CultureInfo("en-US", false).DateTimeFormat;
                 missingId = IdManager.GetMissingId("MaThanhToan", "HoaDonThanhToan");
                 hdtt.MaThanhToan = missingId;
-                string text = string.Concat(new object[] { "insert into HoaDonThanhToan values(", hdtt.MaThanhToan, ",#", hdtt.NgayThanhToan.ToString("MM/dd/yyyy"), "#,", hdtt.MaHoaDonNhap, ",", hdtt.MaNhanVien, ",", hdtt.MaKhachHang, ",", hdtt.MaQuay, ")" });
+                string text = string.Concat(new object[] { "insert into HoaDonThanhToan values(", hdtt.MaThanhToan, ",#", hdtt.NgayThanhToan.ToString("MM/dd/yyyy"), "#,", hdtt.MaHoaDonNhap, ",", hdtt.MaNhanVien, ",", hdtt.MaKhachHang, ",", hdtt.MaQuay, ",", hdtt.TongTienThanhToan, ",", hdtt.TongTienChietKhau, ",", hdtt.TongTienPhaiTra, ")" });
                 command.CommandText = text;
                 if (command.ExecuteNonQuery() <= 0)
                 {
@@ -389,7 +392,10 @@ namespace Nammedia.Medboss.lib
                 new FindField("TienChietKhau", "Tiền chiết khấu", typeof(int)), 
                 new FindField("ThanhTienNhap", "Tiền nhập", typeof(int)), 
                 new FindField("TienThucTra", "Tiền trả", typeof(int)), 
-                new FindField("NgayNhap", "Ng\x00e0y nhập", typeof(DateTime)) };
+                new FindField("NgayNhap", "Ng\x00e0y nhập", typeof(DateTime)), 
+            new FindField("TongTienThanhToan", "Tổng tiền thanh toán", typeof(int)), 
+            new FindField("TongTienChietKhau", "Tổng tiền chiết khấu", typeof(int)), 
+            new FindField("TongTienPhaiTra", "Tổng tiền phải trả", typeof(int)) };
         }
 
         public int Update(HoaDonThanhToanInfo hdtt)
@@ -401,7 +407,7 @@ namespace Nammedia.Medboss.lib
             try
             {
                 DateTimeFormatInfo dateTimeFormat = new CultureInfo("en-US", false).DateTimeFormat;
-                string text = string.Concat(new object[] { "update HoaDonThanhToan set Ngay=#", hdtt.NgayThanhToan.ToString("MM/dd/yyyy"), "#,MaHoaDonNhap=", hdtt.MaHoaDonNhap, ",MaQuay=", hdtt.MaQuay, ",MaNhanVien=", hdtt.MaNhanVien, ",MaKhachHang=", hdtt.MaKhachHang, " where MaThanhToan=", hdtt.MaThanhToan });
+                string text = string.Concat(new object[] { "update HoaDonThanhToan set Ngay=#", hdtt.NgayThanhToan.ToString("MM/dd/yyyy"), "#,MaHoaDonNhap=", hdtt.MaHoaDonNhap, ",MaQuay=", hdtt.MaQuay, ",MaNhanVien=", hdtt.MaNhanVien, ",MaKhachHang=", hdtt.MaKhachHang, ",TongTienThanhToan=", hdtt.TongTienThanhToan, ",TongTienChietKhau=", hdtt.TongTienChietKhau, ",TongTienPhaiTra=", hdtt.TongTienPhaiTra, " where MaThanhToan=", hdtt.MaThanhToan });
                 command.CommandText = text;
                 if (command.ExecuteNonQuery() <= 0)
                 {

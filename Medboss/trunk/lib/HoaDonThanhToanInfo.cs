@@ -12,7 +12,9 @@ namespace Nammedia.Medboss.lib
         private int _maThanhToan;
         private DateTime _ngayThanhToan;
         private ArrayList _thanhToanChiTiet;
-
+        public int TongTienThanhToan { get; set; }
+        public int TongTienChietKhau { get; set; }
+        public int TongTienPhaiTra { get; set; }
         public HoaDonThanhToanInfo()
         {
             this.ThanhToanChiTiet = new ArrayList();
