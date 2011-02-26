@@ -217,7 +217,7 @@ namespace Nammedia.Medboss.controls
             {
                 throw new InvalidException("Kh\x00f4ng thấy quầy.");
             }
-            this.hdn.MaKhachHang = new CSController().GetIdByName(this.txtKhachHang.Text);
+            this.hdn.MaKhachHang = new CSController().GetIdByName(this.txtKhachHang.Text);            
             if ((this.hdn.MaKhachHang == -1) && (this.txtKhachHang.Text != ""))
             {
                 arg = new UnfoundArg(FieldKey.TenKhachHang, "Nh\x00e0 cung cấp", this.txtKhachHang.Text);
@@ -227,6 +227,9 @@ namespace Nammedia.Medboss.controls
                 ufargs.Type = UnfoundType.DoiTac;
                 throw new UnknownValueException(ufargs);
             }
+            this.hdn.TongTienThanhToan = ConvertHelper.getInt(this.txtTongThanhToan.Text);
+            this.hdn.TongTienChietKhau = ConvertHelper.getInt(this.txtTongChietKhau.Text);
+            this.hdn.TongTienPhaiTra = ConvertHelper.getInt(this.txtTongPhaiTra.Text);
             this.hdn.ThanhToanChiTiet.Clear();
             int stt = 1;
             foreach (DataGridViewRow row in (IEnumerable) this.dgrNhapThuocChiTiet.Rows)
@@ -589,6 +592,9 @@ namespace Nammedia.Medboss.controls
             {
                 IFriendlyName name = info2;
             }
+            this.txtTongThanhToan.Text = hdn.TongTienThanhToan.ToString();
+            this.txtTongChietKhau.Text = hdn.TongTienChietKhau.ToString();
+            this.txtTongPhaiTra.Text = hdn.TongTienPhaiTra.ToString();
             this.dgrNhapThuocChiTiet.Rows.Clear();
             foreach (ThanhToanChiTietInfo info3 in this.hdn.ThanhToanChiTiet)
             {

@@ -905,6 +905,7 @@
     <Content Include="Resources\loader.gif" />
     <Content Include="TreeFavor.xml" />
     <Content Include="update\2.1.txt" />
+    <Content Include="update\2.2.txt" />
     <Content Include="vulcan.ico" />
   </ItemGroup>
   <ItemGroup>
