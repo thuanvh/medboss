@@ -170,7 +170,7 @@ namespace Nammedia.Medboss.lib
                     }
                     text = string.Concat(new object[] { 
                         "insert into KiemKeChiTiet values(", ki.MaKiemKe, ",", info2.MaThuocTraoDoi, ",'", info2.TinhTrang, "',", info2.SoLuong, ",", text2, ",'", info2.GhiChu, "',", info2.DonGiaNhap, ",", info2.DonGiaBan, 
-                        ",", info2.STT, ")"
+                        ",", info2.STT, ",'", info2.SoLo, "')"
                      });
                     base.db.Command.CommandText = text;
                     if (base.db.Command.ExecuteNonQuery() <= 0)
@@ -324,7 +324,7 @@ namespace Nammedia.Medboss.lib
                     }
                     text = string.Concat(new object[] { 
                         "insert into KiemKeChiTiet values(", kiemKeInfo.MaKiemKe, ",", info.MaThuocTraoDoi, ",'", info.TinhTrang, "',", info.SoLuong, ",", text2, ",'", info.GhiChu, "',", info.DonGiaNhap, ",", info.DonGiaBan, 
-                        ",", info.STT, ")"
+                        ",", info.STT, ",'", info.SoLo, "')"
                      });
                     command.CommandText = text;
                     if (command.ExecuteNonQuery() <= 0)

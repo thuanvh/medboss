@@ -25,12 +25,12 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Nammedia.Medboss.Program</StartupObject>
     <ApplicationIcon>vulcan.ico</ApplicationIcon>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Medboss.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Nammedia.Medboss</RootNamespace>
-    <ManifestCertificateThumbprint>9769704C37AD7B7BEBC371C2645126E2BD191A18</ManifestCertificateThumbprint>
-    <ManifestKeyFile>Medboss_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>FA97E44F7550CFC94210D628C028B63995B42F49</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Medboss_2_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <SccProjectName>
@@ -41,6 +41,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -51,20 +52,18 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>2.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar, Version=4.7.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\DevComponents.DotNetBar.dll</HintPath>
@@ -425,6 +424,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Medboss_1_TemporaryKey.pfx" />
+    <None Include="Medboss_2_TemporaryKey.pfx" />
     <None Include="Properties\Resources1.cs.bak" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="RepayOrderInfo.cs" />
@@ -665,7 +666,9 @@
     <EmbeddedResource Include="controls\CSListOperator.resources" />
     <EmbeddedResource Include="controls\ImportOrderUI.resources" />
     <EmbeddedResource Include="controls\ImportOrderUIOperator.resources" />
-    <EmbeddedResource Include="controls\KiemKeUI.resources" />
+    <EmbeddedResource Include="controls\KiemKeUI.resx">
+      <DependentUpon>KiemKeUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\KiemKeUIOperator.resources" />
     <EmbeddedResource Include="controls\Loading.resources" />
     <EmbeddedResource Include="controls\LoaiDoiTacUIOperator.resources" />
@@ -865,9 +868,9 @@
     <EmbeddedResource Include="TimeParaser.resources" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -878,26 +881,42 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
-      <Install>true</Install>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
-      <Install>true</Install>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5</ProductName>
-      <Install>true</Install>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Report Viewer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NM.Medboss.exe.licenses" />
@@ -906,6 +925,7 @@
     <Content Include="TreeFavor.xml" />
     <Content Include="update\2.1.txt" />
     <Content Include="update\2.2.txt" />
+    <Content Include="update\2.3.txt" />
     <Content Include="vulcan.ico" />
   </ItemGroup>
   <ItemGroup>

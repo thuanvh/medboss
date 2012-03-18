@@ -18,7 +18,6 @@ Global
 		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Debug|Any CPU.ActiveCfg = Debug
 		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Debug|Any CPU.Build.0 = Debug
 		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Release|Any CPU.ActiveCfg = Release
-		{26421927-221C-41BC-A4D1-DDF06B43E8D7}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
