@@ -17,16 +17,6 @@ namespace Nammedia.Medboss.controls
         private ComboBox cboLoaiKiemKe;
         private DateTimePicker cboNgay;
         private ComboBox cboQuay;
-        private DataGridViewTextBoxColumn colDonGiaBan;
-        private DataGridViewTextBoxColumn colDonGiaNhap;
-        private DataGridViewTextBoxColumn colDVT;
-        private DataGridViewTextBoxColumn colGhiChu;
-        private DataGridViewTextBoxColumn colHanDung;
-        private DataGridViewTextBoxColumn colMaThuoc;
-        private DataGridViewTextBoxColumn colSoLuong;
-        private DataGridViewTextBoxColumn colSTT;
-        private DataGridViewTextBoxColumn colThuoc;
-        private DataGridViewTextBoxColumn colTinhTrang;
         private IContainer components = null;
         public DataGridView dgrKiemKeChiTiet;
         private Label label1;
@@ -35,6 +25,17 @@ namespace Nammedia.Medboss.controls
         private Label label4;
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
+        private DataGridViewTextBoxColumn colSTT;
+        private DataGridViewTextBoxColumn colMaThuoc;
+        private DataGridViewTextBoxColumn colThuoc;
+        private DataGridViewTextBoxColumn colDVT;
+        private DataGridViewTextBoxColumn colSoLuong;
+        private DataGridViewTextBoxColumn colDonGiaNhap;
+        private DataGridViewTextBoxColumn colDonGiaBan;
+        private DataGridViewTextBoxColumn colHanDung;
+        private DataGridViewTextBoxColumn colSoLo;
+        private DataGridViewTextBoxColumn colTinhTrang;
+        private DataGridViewTextBoxColumn colGhiChu;
         private TextBox txtNhanVien;
 
         public KiemKeUI()
@@ -148,6 +149,7 @@ namespace Nammedia.Medboss.controls
                 }
                 info2.SoLuong = ConvertHelper.getInt(row.Cells[this.colSoLuong.Index].Value);
                 info2.TinhTrang = ConvertHelper.getString(row.Cells[this.colTinhTrang.Index].Value);
+                info2.SoLo = ConvertHelper.getString(row.Cells[this.colSoLo.Index].Value);
                 info2.GhiChu = ConvertHelper.getString(row.Cells[this.colGhiChu.Index].Value);
                 string formatedTime = ConvertHelper.getString(row.Cells[this.colHanDung.Index].Value);
                 if (formatedTime != "")
@@ -172,84 +174,117 @@ namespace Nammedia.Medboss.controls
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle style = new DataGridViewCellStyle();
-            DataGridViewCellStyle style2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle style3 = new DataGridViewCellStyle();
-            this.label1 = new Label();
-            this.label2 = new Label();
-            this.label3 = new Label();
-            this.txtNhanVien = new TextBox();
-            this.dgrKiemKeChiTiet = new DataGridView();
-            this.tableLayoutPanel1 = new TableLayoutPanel();
-            this.panel1 = new Panel();
-            this.cboNgay = new DateTimePicker();
-            this.label4 = new Label();
-            this.cboLoaiKiemKe = new ComboBox();
-            this.cboQuay = new ComboBox();
-            this.colSTT = new DataGridViewTextBoxColumn();
-            this.colMaThuoc = new DataGridViewTextBoxColumn();
-            this.colThuoc = new DataGridViewTextBoxColumn();
-            this.colDVT = new DataGridViewTextBoxColumn();
-            this.colSoLuong = new DataGridViewTextBoxColumn();
-            this.colDonGiaNhap = new DataGridViewTextBoxColumn();
-            this.colDonGiaBan = new DataGridViewTextBoxColumn();
-            this.colHanDung = new DataGridViewTextBoxColumn();
-            this.colTinhTrang = new DataGridViewTextBoxColumn();
-            this.colGhiChu = new DataGridViewTextBoxColumn();
-            ((ISupportInitialize) this.dgrKiemKeChiTiet).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNhanVien = new System.Windows.Forms.TextBox();
+            this.dgrKiemKeChiTiet = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cboNgay = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboLoaiKiemKe = new System.Windows.Forms.ComboBox();
+            this.cboQuay = new System.Windows.Forms.ComboBox();
+            this.colSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHanDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrKiemKeChiTiet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            base.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
             this.label1.AutoSize = true;
-            this.label1.Location = new Point(3, 0x11);
+            this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new Size(0x20, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "N&g\x00e0y";
+            this.label1.Text = "N&gày";
+            // 
+            // label2
+            // 
             this.label2.AutoSize = true;
-            this.label2.Location = new Point(0x97, 0x11);
+            this.label2.Location = new System.Drawing.Point(151, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new Size(0x38, 13);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nh\x00e2n &vi\x00ean";
+            this.label2.Text = "Nhân &viên";
+            // 
+            // label3
+            // 
             this.label3.AutoSize = true;
-            this.label3.Location = new Point(0x13f, 0x11);
+            this.label3.Location = new System.Drawing.Point(319, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new Size(0x20, 13);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "&Quầy";
-            this.txtNhanVien.Location = new Point(0xd5, 14);
+            // 
+            // txtNhanVien
+            // 
+            this.txtNhanVien.Location = new System.Drawing.Point(213, 14);
             this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Size = new Size(100, 20);
+            this.txtNhanVien.Size = new System.Drawing.Size(100, 20);
             this.txtNhanVien.TabIndex = 3;
+            // 
+            // dgrKiemKeChiTiet
+            // 
             this.dgrKiemKeChiTiet.AllowUserToOrderColumns = true;
-            this.dgrKiemKeChiTiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgrKiemKeChiTiet.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrKiemKeChiTiet.Columns.AddRange(new DataGridViewColumn[] { this.colSTT, this.colMaThuoc, this.colThuoc, this.colDVT, this.colSoLuong, this.colDonGiaNhap, this.colDonGiaBan, this.colHanDung, this.colTinhTrang, this.colGhiChu });
-            this.dgrKiemKeChiTiet.Dock = DockStyle.Fill;
-            this.dgrKiemKeChiTiet.Location = new Point(3, 0x4a);
+            this.dgrKiemKeChiTiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgrKiemKeChiTiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrKiemKeChiTiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSTT,
+            this.colMaThuoc,
+            this.colThuoc,
+            this.colDVT,
+            this.colSoLuong,
+            this.colDonGiaNhap,
+            this.colDonGiaBan,
+            this.colHanDung,
+            this.colSoLo,
+            this.colTinhTrang,
+            this.colGhiChu});
+            this.dgrKiemKeChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrKiemKeChiTiet.Location = new System.Drawing.Point(3, 74);
             this.dgrKiemKeChiTiet.Name = "dgrKiemKeChiTiet";
-            this.dgrKiemKeChiTiet.Size = new Size(0x292, 0x12e);
+            this.dgrKiemKeChiTiet.Size = new System.Drawing.Size(658, 302);
             this.dgrKiemKeChiTiet.TabIndex = 6;
-            this.dgrKiemKeChiTiet.CellEndEdit += new DataGridViewCellEventHandler(this.KiemKeChiTiet_EndEdit);
-            this.dgrKiemKeChiTiet.DataError += new DataGridViewDataErrorEventHandler(this.dgrKiemKeChiTiet_DataError);
+            this.dgrKiemKeChiTiet.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.KiemKeChiTiet_EndEdit);
+            this.dgrKiemKeChiTiet.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgrKiemKeChiTiet_DataError);
+            // 
+            // tableLayoutPanel1
+            // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.dgrKiemKeChiTiet, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Dock = DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new Point(0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.79433f));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 81.20567f));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
-            this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20f));
-            this.tableLayoutPanel1.Size = new Size(0x298, 0x17b);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.79433F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.20567F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(664, 379);
             this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // panel1
+            // 
             this.panel1.Controls.Add(this.cboNgay);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cboLoaiKiemKe);
@@ -258,88 +293,139 @@ namespace Nammedia.Medboss.controls
             this.panel1.Controls.Add(this.txtNhanVien);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = DockStyle.Fill;
-            this.panel1.Location = new Point(3, 3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new Size(0x292, 0x41);
+            this.panel1.Size = new System.Drawing.Size(658, 65);
             this.panel1.TabIndex = 7;
+            // 
+            // cboNgay
+            // 
             this.cboNgay.CustomFormat = "dd/MM/yyyy";
-            this.cboNgay.Format = DateTimePickerFormat.Custom;
-            this.cboNgay.Location = new Point(0x29, 14);
+            this.cboNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.cboNgay.Location = new System.Drawing.Point(41, 14);
             this.cboNgay.Name = "cboNgay";
-            this.cboNgay.Size = new Size(0x68, 20);
+            this.cboNgay.Size = new System.Drawing.Size(104, 20);
             this.cboNgay.TabIndex = 8;
+            // 
+            // label4
+            // 
             this.label4.AutoSize = true;
-            this.label4.Location = new Point(0x1d0, 0x10);
+            this.label4.Location = new System.Drawing.Point(464, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new Size(0x43, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Loại kiểm k\x00ea";
+            this.label4.Text = "Loại kiểm kê";
+            // 
+            // cboLoaiKiemKe
+            // 
             this.cboLoaiKiemKe.FormattingEnabled = true;
-            this.cboLoaiKiemKe.Location = new Point(0x216, 13);
+            this.cboLoaiKiemKe.Location = new System.Drawing.Point(534, 13);
             this.cboLoaiKiemKe.Name = "cboLoaiKiemKe";
-            this.cboLoaiKiemKe.Size = new Size(0x79, 0x15);
+            this.cboLoaiKiemKe.Size = new System.Drawing.Size(121, 21);
             this.cboLoaiKiemKe.TabIndex = 6;
+            // 
+            // cboQuay
+            // 
             this.cboQuay.FormattingEnabled = true;
-            this.cboQuay.Location = new Point(0x166, 14);
+            this.cboQuay.Location = new System.Drawing.Point(358, 14);
             this.cboQuay.Name = "cboQuay";
-            this.cboQuay.Size = new Size(100, 0x15);
+            this.cboQuay.Size = new System.Drawing.Size(100, 21);
             this.cboQuay.TabIndex = 5;
+            // 
+            // colSTT
+            // 
             this.colSTT.HeaderText = "STT";
             this.colSTT.Name = "colSTT";
-            this.colSTT.Width = 0x35;
-            this.colMaThuoc.HeaderText = "M\x00e3 thuốc";
+            this.colSTT.Width = 53;
+            // 
+            // colMaThuoc
+            // 
+            this.colMaThuoc.HeaderText = "Mã thuốc";
             this.colMaThuoc.Name = "colMaThuoc";
-            this.colMaThuoc.Width = 0x4d;
+            this.colMaThuoc.Width = 77;
+            // 
+            // colThuoc
+            // 
             this.colThuoc.DataPropertyName = "TenThuoc";
-            this.colThuoc.HeaderText = "T\x00ean thuốc, th\x00e0nh phần, h\x00e0m lượng";
+            this.colThuoc.HeaderText = "Tên thuốc, thành phần, hàm lượng";
             this.colThuoc.Name = "colThuoc";
-            this.colThuoc.Width = 0x86;
+            this.colThuoc.Width = 134;
+            // 
+            // colDVT
+            // 
             this.colDVT.DataPropertyName = "DVT";
-            this.colDVT.HeaderText = "Đơn vị t\x00ednh";
+            this.colDVT.HeaderText = "Đơn vị tính";
             this.colDVT.Name = "colDVT";
-            this.colDVT.Width = 0x4f;
+            this.colDVT.Width = 79;
+            // 
+            // colSoLuong
+            // 
             this.colSoLuong.DataPropertyName = "SoLuong";
-            style.Alignment = DataGridViewContentAlignment.TopRight;
-            style.Format = "N0";
-            this.colSoLuong.DefaultCellStyle = style;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle1.Format = "N0";
+            this.colSoLuong.DefaultCellStyle = dataGridViewCellStyle1;
             this.colSoLuong.HeaderText = "Số lượng";
             this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.Width = 0x45;
+            this.colSoLuong.Width = 69;
+            // 
+            // colDonGiaNhap
+            // 
             this.colDonGiaNhap.DataPropertyName = "DonGiaNhap";
-            style2.Alignment = DataGridViewContentAlignment.TopRight;
-            style2.Format = "N0";
-            this.colDonGiaNhap.DefaultCellStyle = style2;
-            this.colDonGiaNhap.HeaderText = "Đơn gi\x00e1 nhập";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.Format = "N0";
+            this.colDonGiaNhap.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDonGiaNhap.HeaderText = "Đơn giá nhập";
             this.colDonGiaNhap.Name = "colDonGiaNhap";
-            this.colDonGiaNhap.Width = 0x58;
+            this.colDonGiaNhap.Width = 88;
+            // 
+            // colDonGiaBan
+            // 
             this.colDonGiaBan.DataPropertyName = "DonGiaBan";
-            style3.Alignment = DataGridViewContentAlignment.TopRight;
-            style3.Format = "N0";
-            this.colDonGiaBan.DefaultCellStyle = style3;
-            this.colDonGiaBan.HeaderText = "Đơn gi\x00e1 b\x00e1n";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle3.Format = "N0";
+            this.colDonGiaBan.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colDonGiaBan.HeaderText = "Đơn giá bán";
             this.colDonGiaBan.Name = "colDonGiaBan";
-            this.colDonGiaBan.Width = 0x43;
+            this.colDonGiaBan.Width = 67;
+            // 
+            // colHanDung
+            // 
             this.colHanDung.DataPropertyName = "HanDung";
-            this.colHanDung.HeaderText = "Hạn d\x00f9ng";
+            this.colHanDung.HeaderText = "Hạn dùng";
             this.colHanDung.Name = "colHanDung";
-            this.colHanDung.Width = 0x49;
-            this.colTinhTrang.HeaderText = "T\x00ecnh trạng";
+            this.colHanDung.Width = 73;
+            // 
+            // colSoLo
+            // 
+            this.colSoLo.HeaderText = "Số lô";
+            this.colSoLo.Name = "colSoLo";
+            this.colSoLo.Width = 45;
+            // 
+            // colTinhTrang
+            // 
+            this.colTinhTrang.HeaderText = "Tình trạng";
             this.colTinhTrang.Name = "colTinhTrang";
-            this.colTinhTrang.Width = 0x4a;
-            this.colGhiChu.HeaderText = "Ghi ch\x00fa";
+            this.colTinhTrang.Width = 74;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.HeaderText = "Ghi chú";
             this.colGhiChu.Name = "colGhiChu";
-            this.colGhiChu.Width = 0x40;
-            base.AutoScaleDimensions = new SizeF(6f, 13f);
-            base.Controls.Add(this.tableLayoutPanel1);
-            base.Name = "KiemKeUI";
-            base.Size = new Size(0x298, 0x17b);
-            base.Load += new EventHandler(this.KiemKeUI_Load);
-            ((ISupportInitialize) this.dgrKiemKeChiTiet).EndInit();
+            this.colGhiChu.Width = 64;
+            // 
+            // KiemKeUI
+            // 
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "KiemKeUI";
+            this.Size = new System.Drawing.Size(664, 379);
+            this.Load += new System.EventHandler(this.KiemKeUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrKiemKeChiTiet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            base.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         private void KiemKeChiTiet_EndEdit(object sender, DataGridViewCellEventArgs e)
@@ -447,6 +533,7 @@ namespace Nammedia.Medboss.controls
                 }
                 row.Cells[this.colThuoc.Index].Value = medicineByMaThuocTraoDoi.TenThuoc;
                 row.Cells[this.colTinhTrang.Index].Value = info.TinhTrang;
+                row.Cells[this.colSoLo.Index].Value = info.SoLo;
                 row.Cells[this.colSoLuong.Index].Value = info.SoLuong.ToString();
                 row.Cells[this.colDonGiaBan.Index].Value = info.DonGiaBan;
                 row.Cells[this.colDonGiaNhap.Index].Value = info.DonGiaNhap;

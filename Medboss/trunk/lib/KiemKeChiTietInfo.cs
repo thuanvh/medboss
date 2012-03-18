@@ -13,6 +13,7 @@ namespace Nammedia.Medboss.lib
         private int _soLuong;
         private int _stt;
         private string _tinhTrang;
+        private string _soLo;
 
         public KiemKeChiTietInfo()
         {
@@ -30,6 +31,11 @@ namespace Nammedia.Medboss.lib
             this.TinhTrang = tinhTrang;
             this.DonGiaBan = donGiaBan;
             this.DonGiaNhap = donGiaNhap;
+        }
+        public string SoLo
+        {
+            get { return this._soLo; }
+            set { this._soLo = value; }
         }
 
         public int DonGiaBan
