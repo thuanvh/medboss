@@ -57,6 +57,8 @@ namespace Nammedia.Medboss.lib
                     info3.GhiChu = ConvertHelper.getString(reader.GetValue(5));
                     info3.DonGiaNhap = ConvertHelper.getInt(reader.GetValue(6));
                     info3.DonGiaBan = ConvertHelper.getInt(reader.GetValue(7));
+                    info3.STT = ConvertHelper.getInt(reader.GetValue(8));
+                    info3.SoLo = ConvertHelper.getString(reader.GetValue(9));                    
                     info2.KiemKeChiTiet.Add(info3);
                 }
                 reader.Close();
