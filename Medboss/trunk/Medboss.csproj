@@ -95,6 +95,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="lib\AutoNumberFormater.cs" />
     <Compile Include="lib\BanThuocChiTietInfo.cs" />
     <Compile Include="lib\ChuyenQuayChiTietInfo.cs" />
@@ -709,7 +715,13 @@
     <EmbeddedResource Include="Favorite\AboutBox1.resources" />
     <EmbeddedResource Include="Favorite\FavoriteEditor.resources" />
     <EmbeddedResource Include="Favorite\NewFolderForm.resources" />
-    <EmbeddedResource Include="MainForm.resources" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MainForm.resources.bak" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Operator.resources" />
     <EmbeddedResource Include="Password.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -921,11 +933,22 @@
   <ItemGroup>
     <Content Include="NM.Medboss.exe.licenses" />
     <None Include="Resources\del.GIF" />
+    <None Include="Resources\48report %281%29.jpg" />
+    <None Include="Resources\icon_report.jpg" />
     <Content Include="Resources\loader.gif" />
+    <None Include="Resources\opcreporticon64.jpg" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\Report.png" />
+    <None Include="Resources\report_check.png" />
+    <None Include="Resources\reports.png" />
+    <None Include="Resources\Sales report.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\task-report-regular.png" />
     <Content Include="TreeFavor.xml" />
     <Content Include="update\2.1.txt" />
     <Content Include="update\2.2.txt" />
     <Content Include="update\2.3.txt" />
+    <Content Include="update\2.4.txt" />
     <Content Include="vulcan.ico" />
   </ItemGroup>
   <ItemGroup>

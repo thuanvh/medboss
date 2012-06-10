@@ -1,0 +1,12 @@
+﻿
+
+-- Modify query qryCongNo_ThanhToanChiTiet
+
+SELECT HoaDonThanhToan.Ngay, Quay.TenQuay, Thuoc.TenThuoc, DVT.DVT, HoaDonThanhToanChiTiet.ChietKhau, HoaDonThanhToanChiTiet.DonGia, HoaDonThanhToanChiTiet.SoLuong, Quay.MaQuay, ThuocDVT.MaThuocTraoDoi, HoaDonThanhToan.MaThanhToan, qryKhachHang.Ten AS TenKhachHang, qryKhachHang.TenLoai AS NhomKhachHang, LoaiThuoc.MaLoai, LoaiThuoc.TenLoai, Thuoc.MaThuoc, HoaDonThanhToan.MaKhachHang, HoaDonThanhToanChiTiet.NgayNhap, HoaDonThanhToanChiTiet.TienChietKhau, [DonGia]*[SoLuong] AS ThanhTienNhap, [ThanhTienNhap]-[TienChietKhau] AS TienThucTra, HoaDonThanhToanChiTiet.STT, HoaDonThanhToan.TongTienThanhToan, HoaDonThanhToan.TongTienChietKhau, HoaDonThanhToan.TongTienPhaiTra
+FROM (((LoaiThuoc INNER JOIN ((ThuocDVT INNER JOIN Thuoc ON ThuocDVT.MaThuoc = Thuoc.MaThuoc) INNER JOIN DVT ON ThuocDVT.MaDVT = DVT.MaDVT) ON LoaiThuoc.MaLoai = Thuoc.MaLoaiThuoc) INNER JOIN HoaDonThanhToanChiTiet ON ThuocDVT.MaThuocTraoDoi = HoaDonThanhToanChiTiet.MaThuocTraoDoi) INNER JOIN (Quay INNER JOIN HoaDonThanhToan ON Quay.MaQuay = HoaDonThanhToan.MaQuay) ON HoaDonThanhToanChiTiet.MaThanhToan = HoaDonThanhToan.MaThanhToan) LEFT JOIN qryKhachHang ON HoaDonThanhToan.MaKhachHang = qryKhachHang.MaKhachHang
+ORDER BY HoaDonThanhToanChiTiet.STT;
+
+-- Modify query qryCongNo_ThanhToan_Join_Nhap
+SELECT nhap.NgayNhap AS NgayNhap, nhap.TongSoLuong AS TongNhap, IIf(IsNull([TongThanhToanTraLai]),0,[TongThanhToanTraLai]) AS TongThanhToan, [TongNhap]-[TongThanhToan] AS ChuaTT, nhap.MaKhachHang, nhap.MaQuay AS MaQuay, nhap.Mathuoctraodoi, nhap.DonGiaNhap
+FROM qryCongNo_NhapThuocKhongKMGroup AS nhap LEFT JOIN qryCongNo_ThanhToan_TraLai_Union AS thanhtoan 
+ON (nhap.NgayNhap = thanhtoan.NgayNhap and nhap.MaQuay = thanhtoan.MaQuay and nhap.MaKhachHang = thanhtoan.MaKhachHang and nhap.Mathuoctraodoi = nhap.Mathuoctraodoi)
