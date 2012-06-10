@@ -52,6 +52,36 @@ namespace Nammedia.Medboss
         private ToolStripSeparator toolStripSeparator;
         private ToolStripPanel TopToolStripPanel;
         private TreeView trvMenu;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem saveAsToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem printToolStripMenuItem;
+        private ToolStripMenuItem printPreviewToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem undoToolStripMenuItem;
+        private ToolStripMenuItem redoToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator4;
+        private ToolStripMenuItem cutToolStripMenuItem;
+        private ToolStripMenuItem copyToolStripMenuItem;
+        private ToolStripMenuItem pasteToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator5;
+        private ToolStripMenuItem selectAllToolStripMenuItem;
+        private ToolStripMenuItem toolsToolStripMenuItem;
+        private ToolStripMenuItem customizeToolStripMenuItem;
+        private ToolStripMenuItem optionsToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem contentsToolStripMenuItem;
+        private ToolStripMenuItem indexToolStripMenuItem;
+        private ToolStripMenuItem searchToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator6;
+        private ToolStripMenuItem aboutToolStripMenuItem;
         private Dictionary<DataType, BackgroundWorker> workerPool = new Dictionary<DataType, BackgroundWorker>();
 
         public MainForm()
@@ -141,398 +171,866 @@ namespace Nammedia.Medboss
 
         private void InitializeComponent()
         {
-            this.components = new Container();
-            TreeNode node = new TreeNode("H\x00f3a đơn nhập thuốc", 3, 3);
-            TreeNode node2 = new TreeNode("Trả lại thuốc cho h\x00e3ng", 3, 3);
-            TreeNode nodeThanhToan = new TreeNode("Thanh to\x00e1n h\x00f3a đơn", 3, 3);
-            TreeNode node3 = new TreeNode("B\x00e1o c\x00e1o nhập thuốc", 2, 2);
-            TreeNode node5 = new TreeNode("B\x00e1o c\x00e1o nhập thuốc chi tiết", 1, 1);
-            TreeNode node4 = new TreeNode("B\x00e1o c\x00e1o trả lại thuốc cho h\x00e3ng", 2, 2);
-            TreeNode node6 = new TreeNode("B\x00e1o c\x00e1o trả lại thuốc cho h\x00e3ng chi tiết", 1, 1);
-            TreeNode ndtlh = new TreeNode("B\x00e1o c\x00e1o trả lại thuốc cho h\x00e3ng nh\x00f3m theo h\x00e3ng", 1, 1);
-            TreeNode node7 = new TreeNode("B\x00e1o c\x00e1o nhập thuốc từ nh\x00e0 cung cấp", 2, 2);
-            TreeNode ndttls = new TreeNode("B\x00e1o c\x00e1o qu\x00e1 tr\x00ecnh thanh to\x00e1n nhập", 2, 2);
-            TreeNode ndttlsct = new TreeNode("B\x00e1o c\x00e1o qu\x00e1 tr\x00ecnh thanh to\x00e1n nhập chi tiết", 2, 2);
-            TreeNode ndttcx = new TreeNode("B\x00e1o c\x00e1o c\x00f4ng nợ nhập thuốc", 2, 2);
-            TreeNode node8 = new TreeNode("Quản l\x00fd nhập thuốc", new TreeNode[] { node, node2, nodeThanhToan, node3, node5, node4, node6, ndtlh, node7, ndttls, ndttlsct, ndttcx });
-            TreeNode node9 = new TreeNode("H\x00f3a đơn b\x00e1n thuốc", 3, 3);
-            TreeNode node10 = new TreeNode("Thu b\x00e1n h\x00e0ng", 3, 3);
-            TreeNode node11 = new TreeNode("Nhập thuốc trả lại", 3, 3);
-            TreeNode node12 = new TreeNode("B\x00e1o c\x00e1o b\x00e1n thuốc chi tiết", 1, 1);
-            TreeNode node13 = new TreeNode("B\x00e1o c\x00e1o b\x00e1n thuốc", 2, 2);
-            TreeNode noderptHangBanChuanDVT = new TreeNode("B\x00e1o c\x00e1o b\x00e1n thuốc chuẩn", 2, 2);
-            TreeNode node14 = new TreeNode("B\x00e1o c\x00e1o nhận lại thuốc từ kh\x00e1ch h\x00e0ng", 2, 2);
-            TreeNode node15 = new TreeNode("B\x00e1o c\x00e1o chi tiết nhận lại thuốc từ kh\x00e1ch h\x00e0ng", 1, 1);
-            TreeNode node16 = new TreeNode("B\x00e1o c\x00e1o b\x00e1n thuốc - kh\x00e1ch h\x00e0ng", 2, 2);
-            TreeNode node17 = new TreeNode("Quản l\x00fd b\x00e1n thuốc", new TreeNode[] { node9, node10, node11, node12, node13, noderptHangBanChuanDVT, node14, node15, node16 });
-            TreeNode node18 = new TreeNode("Nhập th\x00f4ng tin thu chi", 3, 3);
-            TreeNode node19 = new TreeNode("Nhập loại thu chi", 3, 3);
-            TreeNode node20 = new TreeNode("B\x00e1o c\x00e1o quỹ (theo ng\x00e0y)", 1, 1);
-            TreeNode node21 = new TreeNode("B\x00e1o c\x00e1o quỹ tổng hợp", 2, 2);
-            TreeNode node22 = new TreeNode("B\x00e1o c\x00e1o quỹ (theo khoản thu chi)", 1, 1);
-            TreeNode node23 = new TreeNode("Quỹ", new TreeNode[] { node18, node19, node20, node21, node22 });
-            TreeNode node24 = new TreeNode("B\x00e1o c\x00e1o tổng hợp nhập b\x00e1n", 2, 2);
-            TreeNode node25 = new TreeNode("B\x00e1o c\x00e1o tổng hợp nhập b\x00e1n chuẩn", 2, 2);
-            TreeNode node26 = new TreeNode("B\x00e1o c\x00e1o", 2, 2, new TreeNode[] { node24, node25 });
-            TreeNode node27 = new TreeNode("Nhập thuốc v\x00e0o danh mục", 3, 3);
-            TreeNode node28 = new TreeNode("Cập nhật gi\x00e1 thuốc", 3, 3);
-            TreeNode node29 = new TreeNode("Hợp thuốc", 3, 3);
-            TreeNode node30 = new TreeNode("Sửa danh mục", 3, 3);
-            TreeNode node31 = new TreeNode("Xo\x00e1 thuốc", 5, 5);
-            TreeNode node32 = new TreeNode("Nh\x00f3m thuốc", 3, 3);
-            TreeNode node33 = new TreeNode("Thuốc trong h\x00f3a đơn", 4, 4);
-            TreeNode node34 = new TreeNode("Danh mục thuốc", new TreeNode[] { node27, node28, node29, node30, node31, node32, node33 });
-            TreeNode node35 = new TreeNode("Nhập th\x00f4ng tin kiểm k\x00ea", 3, 3);
-            TreeNode node36 = new TreeNode("Loại kiểm k\x00ea", 3, 3);
-            TreeNode node37 = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea theo tên thuốc", 1, 1);
-            TreeNode nodebaocaokiemkebymakk = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea theo trang", 1, 1);
-            TreeNode nodebaocaokiemkemau = new TreeNode("B\x00e1o c\x00e1o kiểm k\x00ea mẫu", 1, 1);
-            TreeNode node38 = new TreeNode("Thuốc tồn", 3, 3);
-            TreeNode node39 = new TreeNode("Kiểm k\x00ea", new TreeNode[] { node35, node36, node37,nodebaocaokiemkebymakk,nodebaocaokiemkemau, node38 });
-            TreeNode node40 = new TreeNode("Nhập th\x00f4ng tin lu\x00e2n chuyển", 3, 3);
-            TreeNode node41 = new TreeNode("B\x00e1o c\x00e1o lu\x00e2n chuyển thuốc", 1, 1);
-            TreeNode nodeBaocaoLuanChuyen = new TreeNode("B\x00e1o c\x00e1o lu\x00e2n chuyển thuốc tổng hợp", 1, 1);
-            TreeNode node42 = new TreeNode("Lu\x00e2n chuyển thuốc", new TreeNode[] { node40, node41, nodeBaocaoLuanChuyen });
-            TreeNode node43 = new TreeNode("T\x00ecm kiếm chi tiết", 4, 4);
-            TreeNode node44 = new TreeNode("T\x00ecm kiếm", 4, 4, new TreeNode[] { node43 });
-            TreeNode node45 = new TreeNode("Quản l\x00fd danh s\x00e1ch nh\x00e2n vi\x00ean", 3, 3);
-            TreeNode node46 = new TreeNode("Nh\x00e2n vi\x00ean", new TreeNode[] { node45 });
-            TreeNode node47 = new TreeNode("Quản l\x00fd danh s\x00e1ch kh\x00e1ch h\x00e0ng", 3, 3);
-            TreeNode node48 = new TreeNode("Nh\x00f3m kh\x00e1ch h\x00e0ng", 3, 3);
-            TreeNode node49 = new TreeNode("Kh\x00e1ch h\x00e0ng", new TreeNode[] { node47, node48 });
-            TreeNode node50 = new TreeNode("Th\x00f4ng tin về Medboss", 2, 2);
-            ComponentResourceManager manager = new ComponentResourceManager(typeof(MainForm));
-            this.BottomToolStripPanel = new ToolStripPanel();
-            this.TopToolStripPanel = new ToolStripPanel();
-            this.RightToolStripPanel = new ToolStripPanel();
-            this.toolStrip1 = new ToolStrip();
-            this.mnuKetQua = new ToolStripLabel();
-            this.toolStripSeparator = new ToolStripSeparator();
-            this.LeftToolStripPanel = new ToolStripPanel();
-            this.ContentPanel = new ToolStripContentPanel();
-            this.splitContainerMain = new SplitContainer();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Hóa đơn nhập thuốc", 3, 3);
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Trả lại thuốc cho hãng", 3, 3);
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Thanh toán hóa đơn", 3, 3);
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Báo cáo nhập thuốc", 2, 2);
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Báo cáo nhập thuốc chi tiết", 1, 1);
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Báo cáo trả lại thuốc cho hãng", 2, 2);
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Báo cáo trả lại thuốc cho hãng chi tiết", 1, 1);
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Báo cáo trả lại thuốc cho hãng nhóm theo hãng", 1, 1);
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Báo cáo nhập thuốc từ nhà cung cấp", 2, 2);
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Báo cáo quá trình thanh toán nhập", 2, 2);
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Báo cáo quá trình thanh toán nhập chi tiết", 2, 2);
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Báo cáo công nợ nhập thuốc", 2, 2);
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Quản lý nhập thuốc", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Hóa đơn bán thuốc", 3, 3);
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Thu bán hàng", 3, 3);
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Nhập thuốc trả lại", 3, 3);
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Báo cáo bán thuốc chi tiết", 1, 1);
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Báo cáo bán thuốc", 2, 2);
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Báo cáo bán thuốc chuẩn", 2, 2);
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Báo cáo nhận lại thuốc từ khách hàng", 2, 2);
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Báo cáo chi tiết nhận lại thuốc từ khách hàng", 1, 1);
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Báo cáo bán thuốc - khách hàng", 2, 2);
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Quản lý bán thuốc", new System.Windows.Forms.TreeNode[] {
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21,
+            treeNode22});
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Nhập thông tin thu chi", 3, 3);
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Nhập loại thu chi", 3, 3);
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Báo cáo quỹ (theo ngày)", 1, 1);
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Báo cáo quỹ tổng hợp", 2, 2);
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Báo cáo quỹ (theo khoản thu chi)", 1, 1);
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Quỹ", new System.Windows.Forms.TreeNode[] {
+            treeNode24,
+            treeNode25,
+            treeNode26,
+            treeNode27,
+            treeNode28});
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Báo cáo tổng hợp nhập bán", 2, 2);
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Báo cáo tổng hợp nhập bán chuẩn", 2, 2);
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Báo cáo", 2, 2, new System.Windows.Forms.TreeNode[] {
+            treeNode30,
+            treeNode31});
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Nhập thuốc vào danh mục", 3, 3);
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Cập nhật giá thuốc", 3, 3);
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Hợp thuốc", 3, 3);
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Sửa danh mục", 3, 3);
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Xoá thuốc", 5, 5);
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Nhóm thuốc", 3, 3);
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Thuốc trong hóa đơn", 4, 4);
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Danh mục thuốc", new System.Windows.Forms.TreeNode[] {
+            treeNode33,
+            treeNode34,
+            treeNode35,
+            treeNode36,
+            treeNode37,
+            treeNode38,
+            treeNode39});
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Nhập thông tin kiểm kê", 3, 3);
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Loại kiểm kê", 3, 3);
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê theo tên thuốc", 1, 1);
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê theo trang", 1, 1);
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê mẫu", 1, 1);
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Thuốc tồn", 3, 3);
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Kiểm kê", new System.Windows.Forms.TreeNode[] {
+            treeNode41,
+            treeNode42,
+            treeNode43,
+            treeNode44,
+            treeNode45,
+            treeNode46});
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Nhập thông tin luân chuyển", 3, 3);
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Báo cáo luân chuyển thuốc", 1, 1);
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Báo cáo luân chuyển thuốc tổng hợp", 1, 1);
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Luân chuyển thuốc", new System.Windows.Forms.TreeNode[] {
+            treeNode48,
+            treeNode49,
+            treeNode50});
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Tìm kiếm chi tiết", 4, 4);
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Tìm kiếm", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode52});
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Quản lý danh sách nhân viên", 3, 3);
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Nhân viên", new System.Windows.Forms.TreeNode[] {
+            treeNode54});
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Quản lý danh sách khách hàng", 3, 3);
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Nhóm khách hàng", 3, 3);
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Khách hàng", new System.Windows.Forms.TreeNode[] {
+            treeNode56,
+            treeNode57});
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Thông tin về Medboss", 2, 2);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.mnuKetQua = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
+            this.splitContainerMain = new System.Windows.Forms.SplitContainer();
             this.tabContent = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel5 = new TabControlPanel();
-            this.trvMenu = new TreeView();
-            this.imgListMenu = new ImageList(this.components);
-            this.menuTab = new TabItem(this.components);
-            this.flpMessage = new FlowLayoutPanel();
-            this.toolStripContainer1 = new ToolStripContainer();
+            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+            this.trvMenu = new System.Windows.Forms.TreeView();
+            this.imgListMenu = new System.Windows.Forms.ImageList(this.components);
+            this.menuTab = new DevComponents.DotNetBar.TabItem(this.components);
+            this.flpMessage = new System.Windows.Forms.FlowLayoutPanel();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.Panel1.SuspendLayout();
             this.splitContainerMain.Panel2.SuspendLayout();
             this.splitContainerMain.SuspendLayout();
-            ((ISupportInitialize) this.tabContent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).BeginInit();
             this.tabContent.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.RightToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            base.SuspendLayout();
-            this.BottomToolStripPanel.Location = new Point(0, 0);
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // BottomToolStripPanel
+            // 
+            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
             this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new Padding(3, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new Size(0, 0);
-            this.TopToolStripPanel.Location = new Point(0, 0);
+            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
             this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new Padding(3, 0, 0, 0);
-            this.TopToolStripPanel.Size = new Size(0, 0);
-            this.RightToolStripPanel.Location = new Point(0, 0);
+            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // RightToolStripPanel
+            // 
+            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
             this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new Padding(3, 0, 0, 0);
-            this.RightToolStripPanel.Size = new Size(0, 0);
-            this.toolStrip1.Dock = DockStyle.None;
-            this.toolStrip1.Items.AddRange(new ToolStripItem[] { this.mnuKetQua, this.toolStripSeparator });
-            this.toolStrip1.Location = new Point(0, 0x16);
+            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuKetQua,
+            this.toolStripSeparator});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 22);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new Size(0x18, 0x4e);
+            this.toolStrip1.Size = new System.Drawing.Size(24, 83);
             this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.TextDirection = ToolStripTextDirection.Vertical90;
-            this.mnuKetQua.Image = Resources.result;
-            this.mnuKetQua.ImageAlign = ContentAlignment.TopCenter;
+            this.toolStrip1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
+            // 
+            // mnuKetQua
+            // 
+            this.mnuKetQua.Image = global::Nammedia.Medboss.Properties.Resources.result;
+            this.mnuKetQua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mnuKetQua.Name = "mnuKetQua";
-            this.mnuKetQua.Size = new Size(0x16, 60);
+            this.mnuKetQua.Size = new System.Drawing.Size(22, 63);
             this.mnuKetQua.Text = "Kết quả";
-            this.mnuKetQua.TextDirection = ToolStripTextDirection.Vertical90;
-            this.mnuKetQua.TextImageRelation = TextImageRelation.ImageAboveText;
-            this.mnuKetQua.Click += new EventHandler(this.mnuKetQua_Click);
+            this.mnuKetQua.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
+            this.mnuKetQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnuKetQua.Click += new System.EventHandler(this.mnuKetQua_Click);
+            // 
+            // toolStripSeparator
+            // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new Size(0x16, 6);
-            this.toolStripSeparator.TextDirection = ToolStripTextDirection.Vertical90;
-            this.LeftToolStripPanel.Location = new Point(0, 0);
+            this.toolStripSeparator.Size = new System.Drawing.Size(22, 6);
+            this.toolStripSeparator.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
+            // 
+            // LeftToolStripPanel
+            // 
+            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new Padding(3, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new Size(0, 0);
-            this.ContentPanel.Size = new Size(0x27d, 0x1e1);
-            this.splitContainerMain.BackColor = SystemColors.ButtonFace;
-            this.splitContainerMain.BorderStyle = BorderStyle.Fixed3D;
-            this.splitContainerMain.Dock = DockStyle.Fill;
-            this.splitContainerMain.Location = new Point(0, 0);
+            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Size = new System.Drawing.Size(637, 481);
+            // 
+            // splitContainerMain
+            // 
+            this.splitContainerMain.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.splitContainerMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerMain.Location = new System.Drawing.Point(0, 0);
             this.splitContainerMain.Name = "splitContainerMain";
+            // 
+            // splitContainerMain.Panel1
+            // 
             this.splitContainerMain.Panel1.Controls.Add(this.tabContent);
+            // 
+            // splitContainerMain.Panel2
+            // 
             this.splitContainerMain.Panel2.Controls.Add(this.flpMessage);
             this.splitContainerMain.Panel2Collapsed = true;
-            this.splitContainerMain.Size = new Size(0x292, 0x1e1);
-            this.splitContainerMain.SplitterDistance = 0x1d7;
+            this.splitContainerMain.Size = new System.Drawing.Size(658, 481);
+            this.splitContainerMain.SplitterDistance = 471;
             this.splitContainerMain.TabIndex = 1;
+            // 
+            // tabContent
+            // 
             this.tabContent.AutoHideSystemBox = false;
             this.tabContent.CanReorderTabs = true;
             this.tabContent.CloseButtonVisible = true;
             this.tabContent.Controls.Add(this.tabControlPanel5);
-            this.tabContent.Dock = DockStyle.Fill;
-            this.tabContent.Location = new Point(0, 0);
+            this.tabContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabContent.Location = new System.Drawing.Point(0, 0);
             this.tabContent.Name = "tabContent";
-            this.tabContent.SelectedTabFont = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold);
+            this.tabContent.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabContent.SelectedTabIndex = 0;
-            this.tabContent.Size = new Size(0x28e, 0x1dd);
+            this.tabContent.Size = new System.Drawing.Size(654, 477);
             this.tabContent.TabIndex = 0;
-            this.tabContent.TabLayoutType = eTabLayoutType.FixedWithNavigationBox;
+            this.tabContent.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabContent.Tabs.Add(this.menuTab);
-            this.tabContent.TabItemClose += new TabStrip.UserActionEventHandler(this.tabContent_TabItemClose);
+            this.tabContent.TabItemClose += new DevComponents.DotNetBar.TabStrip.UserActionEventHandler(this.tabContent_TabItemClose);
+            // 
+            // tabControlPanel5
+            // 
             this.tabControlPanel5.Controls.Add(this.trvMenu);
-            this.tabControlPanel5.Dock = DockStyle.Fill;
-            this.tabControlPanel5.Location = new Point(0, 0x1a);
+            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel5.Name = "tabControlPanel5";
-            this.tabControlPanel5.Padding = new Padding(1);
-            this.tabControlPanel5.Size = new Size(0x28e, 0x1c3);
-            this.tabControlPanel5.Style.BackColor1.Color = Color.FromArgb(0x90, 0x9c, 0xbb);
-            this.tabControlPanel5.Style.BackColor2.Color = Color.FromArgb(230, 0xe9, 240);
-            this.tabControlPanel5.Style.Border = eBorderType.SingleLine;
-            this.tabControlPanel5.Style.BorderColor.Color = SystemColors.ControlDark;
-            this.tabControlPanel5.Style.BorderSide = eBorderSide.Bottom | eBorderSide.Right | eBorderSide.Left;
+            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel5.Size = new System.Drawing.Size(654, 451);
+            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(209)))), ((int)(((byte)(255)))));
+            this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
+            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDark;
+            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel5.Style.GradientAngle = 90;
             this.tabControlPanel5.TabIndex = 5;
             this.tabControlPanel5.TabItem = this.menuTab;
-            this.trvMenu.Dock = DockStyle.Fill;
+            // 
+            // trvMenu
+            // 
+            this.trvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvMenu.ImageIndex = 0;
             this.trvMenu.ImageList = this.imgListMenu;
-            this.trvMenu.Location = new Point(1, 1);
+            this.trvMenu.Location = new System.Drawing.Point(1, 1);
             this.trvMenu.Name = "trvMenu";
-            node.ImageIndex = 3;
-            node.Name = "ndHoaDonNhapThuoc";
-            node.SelectedImageIndex = 3;
-            node2.ImageIndex = 3;
-            node2.Name = "ndTraLaiThuocDaNhap";
-            node2.SelectedImageIndex = 3;
-            nodeThanhToan.ImageIndex = 3;
-            nodeThanhToan.Name = "ndThanhToanHDN";
-            nodeThanhToan.SelectedImageIndex = 3;
-            node3.ImageIndex = 2;
-            node3.Name = "ndBaoCaoNhapThuoc";
-            node3.SelectedImageIndex = 2;
-            node4.ImageIndex = 2;
-            node4.Name = "ndBaoCaoTraLaiThuoc";
-            node4.SelectedImageIndex = 2;
-            node5.ImageIndex = 1;
-            node5.Name = "ndBaoCaoNhapThuocChiTiet";
-            node5.SelectedImageIndex = 1;
-            node6.ImageIndex = 1;
-            node6.Name = "ndBaoCaoTraLaiThuocChiTiet";
-            node6.SelectedImageIndex = 1;
-            ndtlh.ImageIndex = 1;
-            ndtlh.Name = "ndBaoCaoTraLaiThuocTheoHang";
-            ndtlh.SelectedImageIndex = 1;
-            node7.ImageIndex = 2;
-            node7.Name = "ndBaoCaoNhapThuocKhachHang";
-            node7.SelectedImageIndex = 2;
-            ndttls.ImageIndex = 2;
-            ndttls.Name = "ndBaoCaoNhapThuoc_ThanhToanLichSu";
-            ndttls.SelectedImageIndex = 2;
-            ndttlsct.ImageIndex = 2;
-            ndttlsct.Name = "ndBaoCaoNhapThuoc_ThanhToanLichSuChiTiet";
-            ndttlsct.SelectedImageIndex = 2;
-            ndttcx.ImageIndex = 2;
-            ndttcx.Name = "ndBaoCaoNhapThuoc_ThanhToanChuaXong";
-            ndttcx.SelectedImageIndex = 2;
-            node8.ImageIndex = 0;
-            node8.Name = "ndThuoc";
-            node9.ImageIndex = 3;
-            node9.Name = "ndHoaDonBanThuoc";
-            node9.SelectedImageIndex = 3;
-            node10.ImageIndex = 3;
-            node10.Name = "ndThuBanHang";
-            node10.SelectedImageIndex = 3;
-            node11.ImageIndex = 3;
-            node11.Name = "ndNhapThuocTraLai";
-            node11.SelectedImageIndex = 3;
-            node12.ImageIndex = 1;
-            node12.Name = "ndBaoCaoBanThuocChiTiet";
-            node12.SelectedImageIndex = 1;
-            node13.ImageIndex = 2;
-            node13.Name = "ndBaoCaoBanThuoc";
-            node13.SelectedImageIndex = 2;
-            noderptHangBanChuanDVT.Name = "ndBaoCaoBanThuocChuanDVT";
-            noderptHangBanChuanDVT.ImageIndex = 2;
-            noderptHangBanChuanDVT.SelectedImageIndex = 2;
-            node14.ImageIndex = 2;
-            node14.Name = "ndBaoCaoNhanThuocTraLai";
-            node14.SelectedImageIndex = 2;
-            node15.ImageIndex = 1;
-            node15.Name = "ndBaoCaoNhanThuocTraLaiChiTiet";
-            node15.SelectedImageIndex = 1;
-            node16.ImageIndex = 2;
-            node16.Name = "ndBaoCaoBanThuocKhachHang";
-            node16.SelectedImageIndex = 2;
-            node17.Name = "Node2";
-            node18.ImageIndex = 3;
-            node18.Name = "ndNhapThongTinThuChi";
-            node18.SelectedImageIndex = 3;
-            node19.ImageIndex = 3;
-            node19.Name = "ndNhapLoaiThuChi";
-            node19.SelectedImageIndex = 3;
-            node20.ImageIndex = 1;
-            node20.Name = "ndBaoCaoQuyTheoNgay";
-            node20.SelectedImageIndex = 1;
-            node21.ImageIndex = 2;
-            node21.Name = "ndBaoCaoQuyTongHop";
-            node21.SelectedImageIndex = 2;
-            node22.ImageIndex = 1;
-            node22.Name = "ndBaoCaoQuyTheoKhoanThuChi";
-            node22.SelectedImageIndex = 1;
-            node23.Name = "Node5";
-            node24.ImageIndex = 2;
-            node24.Name = "ndBaoCaoTongHopNhapBan";
-            node24.SelectedImageIndex = 2;
-            node25.ImageIndex = 2;
-            node25.Name = "ndBaoCaoTongHopNhapBanChuan";
-            node25.SelectedImageIndex = 2;
-            node26.ImageIndex = 2;
-            node26.Name = "ndBaoCao";
-            node26.SelectedImageIndex = 2;
-            node27.ImageIndex = 3;
-            node27.Name = "ndNhapThuocVaoDanhMuc";
-            node27.SelectedImageIndex = 3;
-            node28.ImageIndex = 3;
-            node28.Name = "ndCapNhatGiaThuoc";
-            node28.SelectedImageIndex = 3;
-            node29.ImageIndex = 3;
-            node29.Name = "ndChuyenThuoc";
-            node29.SelectedImageIndex = 3;
-            node30.ImageIndex = 3;
-            node30.Name = "ndSuaDanhMuc";
-            node30.SelectedImageIndex = 3;
-            node31.ImageIndex = 5;
-            node31.Name = "ndXoaThuoc";
-            node31.SelectedImageIndex = 5;
-            node32.ImageIndex = 3;
-            node32.Name = "ndLoaiThuoc";
-            node32.SelectedImageIndex = 3;
-            node33.ImageIndex = 4;
-            node33.Name = "ndThuocTrongHoaDon";
-            node33.SelectedImageIndex = 4;
-            node34.Name = "ndDanhMucThuoc";
-            node35.ImageIndex = 3;
-            node35.Name = "ndNhapThongTinKiemKe";
-            node35.SelectedImageIndex = 3;
-            node36.ImageIndex = 3;
-            node36.Name = "ndLoaiKiemKe";
-            node36.SelectedImageIndex = 3;
-            node37.ImageIndex = 1;
-            node37.Name = "ndBaoCaoKiemKe";
-            node37.SelectedImageIndex = 1;
-            nodebaocaokiemkebymakk.ImageIndex = 1;
-            nodebaocaokiemkebymakk.Name = "ndBaoCaoKiemKeMaKK";
-            nodebaocaokiemkebymakk.SelectedImageIndex = 1;
-            nodebaocaokiemkemau.ImageIndex = 1;
-            nodebaocaokiemkemau.Name = "ndBaoCaoKiemKeMau";
-            nodebaocaokiemkemau.SelectedImageIndex = 1;
-            node38.ImageIndex = 3;
-            node38.Name = "ndThuocTon";
-            node38.SelectedImageIndex = 3;
-            node39.Name = "ndKiemKe";
-            node40.ImageIndex = 3;
-            node40.Name = "ndNhapThongTinChuyenQuay";
-            node40.SelectedImageIndex = 3;
-            node41.ImageIndex = 1;
-            node41.Name = "ndBaoCaoLuanChuyenThuoc";
-            node41.SelectedImageIndex = 1;
-            nodeBaocaoLuanChuyen.ImageIndex = 1;
-            nodeBaocaoLuanChuyen.Name = "ndBaoCaoLuanChuyenThuocTongHop";
-            nodeBaocaoLuanChuyen.SelectedImageIndex = 1;
-            node42.Name = "ndChuyenQuay";
-            node43.ImageIndex = 4;
-            node43.Name = "ndTimKiemChiTiet";
-            node43.SelectedImageIndex = 4;
-            node44.ImageIndex = 4;
-            node44.Name = "ndTimKiem";
-            node44.SelectedImageIndex = 4;
-            node45.ImageIndex = 3;
-            node45.Name = "ndQuanLyDanhSachNhanVien";
-            node45.SelectedImageIndex = 3;
-            node46.Name = "ndNhanVien";
-            node47.ImageIndex = 3;
-            node47.Name = "ndQuanLyDanhSachKhachHang";
-            node47.SelectedImageIndex = 3;
-            node48.ImageIndex = 3;
-            node48.Name = "ndNhomKhachHang";
-            node48.SelectedImageIndex = 3;
-            node49.Name = "ndKhachHang";
-            node50.ImageIndex = 2;
-            node50.Name = "ndAbout";
-            node50.SelectedImageIndex = 2;
-            this.trvMenu.Nodes.AddRange(new TreeNode[] { node8, node17, node23, node26, node34, node39, node42, node44, node46, node49, node50 });
+            treeNode1.ImageIndex = 3;
+            treeNode1.Name = "ndHoaDonNhapThuoc";
+            treeNode1.SelectedImageIndex = 3;
+            treeNode1.Text = "Hóa đơn nhập thuốc";
+            treeNode2.ImageIndex = 3;
+            treeNode2.Name = "ndTraLaiThuocDaNhap";
+            treeNode2.SelectedImageIndex = 3;
+            treeNode2.Text = "Trả lại thuốc cho hãng";
+            treeNode3.ImageIndex = 3;
+            treeNode3.Name = "ndThanhToanHDN";
+            treeNode3.SelectedImageIndex = 3;
+            treeNode3.Text = "Thanh toán hóa đơn";
+            treeNode4.ImageIndex = 2;
+            treeNode4.Name = "ndBaoCaoNhapThuoc";
+            treeNode4.SelectedImageIndex = 2;
+            treeNode4.Text = "Báo cáo nhập thuốc";
+            treeNode5.ImageIndex = 1;
+            treeNode5.Name = "ndBaoCaoNhapThuocChiTiet";
+            treeNode5.SelectedImageIndex = 1;
+            treeNode5.Text = "Báo cáo nhập thuốc chi tiết";
+            treeNode6.ImageIndex = 2;
+            treeNode6.Name = "ndBaoCaoTraLaiThuoc";
+            treeNode6.SelectedImageIndex = 2;
+            treeNode6.Text = "Báo cáo trả lại thuốc cho hãng";
+            treeNode7.ImageIndex = 1;
+            treeNode7.Name = "ndBaoCaoTraLaiThuocChiTiet";
+            treeNode7.SelectedImageIndex = 1;
+            treeNode7.Text = "Báo cáo trả lại thuốc cho hãng chi tiết";
+            treeNode8.ImageIndex = 1;
+            treeNode8.Name = "ndBaoCaoTraLaiThuocTheoHang";
+            treeNode8.SelectedImageIndex = 1;
+            treeNode8.Text = "Báo cáo trả lại thuốc cho hãng nhóm theo hãng";
+            treeNode9.ImageIndex = 2;
+            treeNode9.Name = "ndBaoCaoNhapThuocKhachHang";
+            treeNode9.SelectedImageIndex = 2;
+            treeNode9.Text = "Báo cáo nhập thuốc từ nhà cung cấp";
+            treeNode10.ImageIndex = 2;
+            treeNode10.Name = "ndBaoCaoNhapThuoc_ThanhToanLichSu";
+            treeNode10.SelectedImageIndex = 2;
+            treeNode10.Text = "Báo cáo quá trình thanh toán nhập";
+            treeNode11.ImageIndex = 2;
+            treeNode11.Name = "ndBaoCaoNhapThuoc_ThanhToanLichSuChiTiet";
+            treeNode11.SelectedImageIndex = 2;
+            treeNode11.Text = "Báo cáo quá trình thanh toán nhập chi tiết";
+            treeNode12.ImageIndex = 2;
+            treeNode12.Name = "ndBaoCaoNhapThuoc_ThanhToanChuaXong";
+            treeNode12.SelectedImageIndex = 2;
+            treeNode12.Text = "Báo cáo công nợ nhập thuốc";
+            treeNode13.ImageIndex = 0;
+            treeNode13.Name = "ndThuoc";
+            treeNode13.Text = "Quản lý nhập thuốc";
+            treeNode14.ImageIndex = 3;
+            treeNode14.Name = "ndHoaDonBanThuoc";
+            treeNode14.SelectedImageIndex = 3;
+            treeNode14.Text = "Hóa đơn bán thuốc";
+            treeNode15.ImageIndex = 3;
+            treeNode15.Name = "ndThuBanHang";
+            treeNode15.SelectedImageIndex = 3;
+            treeNode15.Text = "Thu bán hàng";
+            treeNode16.ImageIndex = 3;
+            treeNode16.Name = "ndNhapThuocTraLai";
+            treeNode16.SelectedImageIndex = 3;
+            treeNode16.Text = "Nhập thuốc trả lại";
+            treeNode17.ImageIndex = 1;
+            treeNode17.Name = "ndBaoCaoBanThuocChiTiet";
+            treeNode17.SelectedImageIndex = 1;
+            treeNode17.Text = "Báo cáo bán thuốc chi tiết";
+            treeNode18.ImageIndex = 2;
+            treeNode18.Name = "ndBaoCaoBanThuoc";
+            treeNode18.SelectedImageIndex = 2;
+            treeNode18.Text = "Báo cáo bán thuốc";
+            treeNode19.ImageIndex = 2;
+            treeNode19.Name = "ndBaoCaoBanThuocChuanDVT";
+            treeNode19.SelectedImageIndex = 2;
+            treeNode19.Text = "Báo cáo bán thuốc chuẩn";
+            treeNode20.ImageIndex = 2;
+            treeNode20.Name = "ndBaoCaoNhanThuocTraLai";
+            treeNode20.SelectedImageIndex = 2;
+            treeNode20.Text = "Báo cáo nhận lại thuốc từ khách hàng";
+            treeNode21.ImageIndex = 1;
+            treeNode21.Name = "ndBaoCaoNhanThuocTraLaiChiTiet";
+            treeNode21.SelectedImageIndex = 1;
+            treeNode21.Text = "Báo cáo chi tiết nhận lại thuốc từ khách hàng";
+            treeNode22.ImageIndex = 2;
+            treeNode22.Name = "ndBaoCaoBanThuocKhachHang";
+            treeNode22.SelectedImageIndex = 2;
+            treeNode22.Text = "Báo cáo bán thuốc - khách hàng";
+            treeNode23.Name = "Node2";
+            treeNode23.Text = "Quản lý bán thuốc";
+            treeNode24.ImageIndex = 3;
+            treeNode24.Name = "ndNhapThongTinThuChi";
+            treeNode24.SelectedImageIndex = 3;
+            treeNode24.Text = "Nhập thông tin thu chi";
+            treeNode25.ImageIndex = 3;
+            treeNode25.Name = "ndNhapLoaiThuChi";
+            treeNode25.SelectedImageIndex = 3;
+            treeNode25.Text = "Nhập loại thu chi";
+            treeNode26.ImageIndex = 1;
+            treeNode26.Name = "ndBaoCaoQuyTheoNgay";
+            treeNode26.SelectedImageIndex = 1;
+            treeNode26.Text = "Báo cáo quỹ (theo ngày)";
+            treeNode27.ImageIndex = 2;
+            treeNode27.Name = "ndBaoCaoQuyTongHop";
+            treeNode27.SelectedImageIndex = 2;
+            treeNode27.Text = "Báo cáo quỹ tổng hợp";
+            treeNode28.ImageIndex = 1;
+            treeNode28.Name = "ndBaoCaoQuyTheoKhoanThuChi";
+            treeNode28.SelectedImageIndex = 1;
+            treeNode28.Text = "Báo cáo quỹ (theo khoản thu chi)";
+            treeNode29.Name = "Node5";
+            treeNode29.Text = "Quỹ";
+            treeNode30.ImageIndex = 2;
+            treeNode30.Name = "ndBaoCaoTongHopNhapBan";
+            treeNode30.SelectedImageIndex = 2;
+            treeNode30.Text = "Báo cáo tổng hợp nhập bán";
+            treeNode31.ImageIndex = 2;
+            treeNode31.Name = "ndBaoCaoTongHopNhapBanChuan";
+            treeNode31.SelectedImageIndex = 2;
+            treeNode31.Text = "Báo cáo tổng hợp nhập bán chuẩn";
+            treeNode32.ImageIndex = 2;
+            treeNode32.Name = "ndBaoCao";
+            treeNode32.SelectedImageIndex = 2;
+            treeNode32.Text = "Báo cáo";
+            treeNode33.ImageIndex = 3;
+            treeNode33.Name = "ndNhapThuocVaoDanhMuc";
+            treeNode33.SelectedImageIndex = 3;
+            treeNode33.Text = "Nhập thuốc vào danh mục";
+            treeNode34.ImageIndex = 3;
+            treeNode34.Name = "ndCapNhatGiaThuoc";
+            treeNode34.SelectedImageIndex = 3;
+            treeNode34.Text = "Cập nhật giá thuốc";
+            treeNode35.ImageIndex = 3;
+            treeNode35.Name = "ndChuyenThuoc";
+            treeNode35.SelectedImageIndex = 3;
+            treeNode35.Text = "Hợp thuốc";
+            treeNode36.ImageIndex = 3;
+            treeNode36.Name = "ndSuaDanhMuc";
+            treeNode36.SelectedImageIndex = 3;
+            treeNode36.Text = "Sửa danh mục";
+            treeNode37.ImageIndex = 5;
+            treeNode37.Name = "ndXoaThuoc";
+            treeNode37.SelectedImageIndex = 5;
+            treeNode37.Text = "Xoá thuốc";
+            treeNode38.ImageIndex = 3;
+            treeNode38.Name = "ndLoaiThuoc";
+            treeNode38.SelectedImageIndex = 3;
+            treeNode38.Text = "Nhóm thuốc";
+            treeNode39.ImageIndex = 4;
+            treeNode39.Name = "ndThuocTrongHoaDon";
+            treeNode39.SelectedImageIndex = 4;
+            treeNode39.Text = "Thuốc trong hóa đơn";
+            treeNode40.Name = "ndDanhMucThuoc";
+            treeNode40.Text = "Danh mục thuốc";
+            treeNode41.ImageIndex = 3;
+            treeNode41.Name = "ndNhapThongTinKiemKe";
+            treeNode41.SelectedImageIndex = 3;
+            treeNode41.Text = "Nhập thông tin kiểm kê";
+            treeNode42.ImageIndex = 3;
+            treeNode42.Name = "ndLoaiKiemKe";
+            treeNode42.SelectedImageIndex = 3;
+            treeNode42.Text = "Loại kiểm kê";
+            treeNode43.ImageIndex = 1;
+            treeNode43.Name = "ndBaoCaoKiemKe";
+            treeNode43.SelectedImageIndex = 1;
+            treeNode43.Text = "Báo cáo kiểm kê theo tên thuốc";
+            treeNode44.ImageIndex = 1;
+            treeNode44.Name = "ndBaoCaoKiemKeMaKK";
+            treeNode44.SelectedImageIndex = 1;
+            treeNode44.Text = "Báo cáo kiểm kê theo trang";
+            treeNode45.ImageIndex = 1;
+            treeNode45.Name = "ndBaoCaoKiemKeMau";
+            treeNode45.SelectedImageIndex = 1;
+            treeNode45.Text = "Báo cáo kiểm kê mẫu";
+            treeNode46.ImageIndex = 3;
+            treeNode46.Name = "ndThuocTon";
+            treeNode46.SelectedImageIndex = 3;
+            treeNode46.Text = "Thuốc tồn";
+            treeNode47.Name = "ndKiemKe";
+            treeNode47.Text = "Kiểm kê";
+            treeNode48.ImageIndex = 3;
+            treeNode48.Name = "ndNhapThongTinChuyenQuay";
+            treeNode48.SelectedImageIndex = 3;
+            treeNode48.Text = "Nhập thông tin luân chuyển";
+            treeNode49.ImageIndex = 1;
+            treeNode49.Name = "ndBaoCaoLuanChuyenThuoc";
+            treeNode49.SelectedImageIndex = 1;
+            treeNode49.Text = "Báo cáo luân chuyển thuốc";
+            treeNode50.ImageIndex = 1;
+            treeNode50.Name = "ndBaoCaoLuanChuyenThuocTongHop";
+            treeNode50.SelectedImageIndex = 1;
+            treeNode50.Text = "Báo cáo luân chuyển thuốc tổng hợp";
+            treeNode51.Name = "ndChuyenQuay";
+            treeNode51.Text = "Luân chuyển thuốc";
+            treeNode52.ImageIndex = 4;
+            treeNode52.Name = "ndTimKiemChiTiet";
+            treeNode52.SelectedImageIndex = 4;
+            treeNode52.Text = "Tìm kiếm chi tiết";
+            treeNode53.ImageIndex = 4;
+            treeNode53.Name = "ndTimKiem";
+            treeNode53.SelectedImageIndex = 4;
+            treeNode53.Text = "Tìm kiếm";
+            treeNode54.ImageIndex = 3;
+            treeNode54.Name = "ndQuanLyDanhSachNhanVien";
+            treeNode54.SelectedImageIndex = 3;
+            treeNode54.Text = "Quản lý danh sách nhân viên";
+            treeNode55.Name = "ndNhanVien";
+            treeNode55.Text = "Nhân viên";
+            treeNode56.ImageIndex = 3;
+            treeNode56.Name = "ndQuanLyDanhSachKhachHang";
+            treeNode56.SelectedImageIndex = 3;
+            treeNode56.Text = "Quản lý danh sách khách hàng";
+            treeNode57.ImageIndex = 3;
+            treeNode57.Name = "ndNhomKhachHang";
+            treeNode57.SelectedImageIndex = 3;
+            treeNode57.Text = "Nhóm khách hàng";
+            treeNode58.Name = "ndKhachHang";
+            treeNode58.Text = "Khách hàng";
+            treeNode59.ImageIndex = 2;
+            treeNode59.Name = "ndAbout";
+            treeNode59.SelectedImageIndex = 2;
+            treeNode59.Text = "Thông tin về Medboss";
+            this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode23,
+            treeNode29,
+            treeNode32,
+            treeNode40,
+            treeNode47,
+            treeNode51,
+            treeNode53,
+            treeNode55,
+            treeNode58,
+            treeNode59});
             this.trvMenu.SelectedImageIndex = 0;
-            this.trvMenu.Size = new Size(0x28c, 0x1c1);
+            this.trvMenu.Size = new System.Drawing.Size(652, 449);
             this.trvMenu.TabIndex = 0;
-            this.trvMenu.DoubleClick += new EventHandler(this.menuTree_DoubleClick);
-            this.trvMenu.KeyPress += new KeyPressEventHandler(this.menuTree_KeyPress);
-            this.imgListMenu.ImageStream = (ImageListStreamer) manager.GetObject("imgListMenu.ImageStream");
-            this.imgListMenu.TransparentColor = Color.Transparent;
-            this.imgListMenu.Images.SetKeyName(0, "icon_Vendors_16px.gif");
-            this.imgListMenu.Images.SetKeyName(1, "16doc.gif");
-            this.imgListMenu.Images.SetKeyName(2, "16newreport.gif");
-            this.imgListMenu.Images.SetKeyName(3, "edit.gif");
-            this.imgListMenu.Images.SetKeyName(4, "icon_search_16px.gif");
-            this.imgListMenu.Images.SetKeyName(5, "cl-tb-delete.gif");
-            this.imgListMenu.Images.SetKeyName(6, "16newfolder.gif");
-            this.imgListMenu.Images.SetKeyName(7, "folder.gif");
+            this.trvMenu.DoubleClick += new System.EventHandler(this.menuTree_DoubleClick);
+            this.trvMenu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.menuTree_KeyPress);
+            // 
+            // imgListMenu
+            // 
+            this.imgListMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenu.ImageStream")));
+            this.imgListMenu.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListMenu.Images.SetKeyName(0, "48report (1).jpg");
+            this.imgListMenu.Images.SetKeyName(1, "reports.png");
+            this.imgListMenu.Images.SetKeyName(2, "opcreporticon64.jpg");
+            this.imgListMenu.Images.SetKeyName(3, "pencil.png");
+            this.imgListMenu.Images.SetKeyName(4, "Search.png");
+            this.imgListMenu.Images.SetKeyName(5, "Report.png");
+            this.imgListMenu.Images.SetKeyName(6, "report_check.png");
+            this.imgListMenu.Images.SetKeyName(7, "task-report-regular.png");
+            this.imgListMenu.Images.SetKeyName(8, "Report.png");
+            this.imgListMenu.Images.SetKeyName(9, "icon_report.jpg");
+            this.imgListMenu.Images.SetKeyName(10, "48report.jpg");
+            this.imgListMenu.Images.SetKeyName(11, "Sales report.png");
+            // 
+            // menuTab
+            // 
             this.menuTab.AttachedControl = this.tabControlPanel5;
             this.menuTab.Name = "menuTab";
-            this.menuTab.PredefinedColor = eTabItemColor.Default;
+            this.menuTab.PredefinedColor = DevComponents.DotNetBar.eTabItemColor.Default;
             this.menuTab.Text = "Menu";
-            this.flpMessage.Dock = DockStyle.Fill;
-            this.flpMessage.FlowDirection = FlowDirection.TopDown;
-            this.flpMessage.Location = new Point(0, 0);
+            // 
+            // flpMessage
+            // 
+            this.flpMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpMessage.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpMessage.Location = new System.Drawing.Point(0, 0);
             this.flpMessage.Name = "flpMessage";
-            this.flpMessage.Size = new Size(0x5c, 0x60);
+            this.flpMessage.Size = new System.Drawing.Size(92, 96);
             this.flpMessage.TabIndex = 0;
-            this.flpMessage.Leave += new EventHandler(this.Right_leave);
+            this.flpMessage.Leave += new System.EventHandler(this.Right_leave);
+            // 
+            // toolStripContainer1
+            // 
             this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainerMain);
-            this.toolStripContainer1.ContentPanel.Size = new Size(0x292, 0x1e1);
-            this.toolStripContainer1.Dock = DockStyle.Fill;
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(658, 481);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
-            this.toolStripContainer1.Location = new Point(0, 0);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // toolStripContainer1.RightToolStripPanel
+            // 
             this.toolStripContainer1.RightToolStripPanel.Controls.Add(this.toolStrip1);
-            this.toolStripContainer1.Size = new Size(0x2aa, 0x1e1);
+            this.toolStripContainer1.Size = new System.Drawing.Size(682, 481);
             this.toolStripContainer1.TabIndex = 2;
             this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             this.toolStripContainer1.TopToolStripPanelVisible = false;
-            base.AutoScaleDimensions = new SizeF(6f, 13f);
-            base.ClientSize = new Size(0x2aa, 0x1e1);
-            base.Controls.Add(this.toolStripContainer1);
-            base.Name = "MainForm";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.toolsToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(682, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.printToolStripMenuItem,
+            this.printPreviewToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
+            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Text = "&New";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveAsToolStripMenuItem.Text = "Save &As";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
+            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printToolStripMenuItem.Text = "&Print";
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
+            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.redoToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.cutToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.selectAllToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.undoToolStripMenuItem.Text = "&Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.redoToolStripMenuItem.Text = "&Redo";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
+            this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.cutToolStripMenuItem.Text = "Cu&t";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
+            this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.copyToolStripMenuItem.Text = "&Copy";
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
+            this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.pasteToolStripMenuItem.Text = "&Paste";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(141, 6);
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.selectAllToolStripMenuItem.Text = "Select &All";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customizeToolStripMenuItem,
+            this.optionsToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Text = "&Tools";
+            // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.customizeToolStripMenuItem.Text = "&Customize";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contentsToolStripMenuItem,
+            this.indexToolStripMenuItem,
+            this.searchToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // contentsToolStripMenuItem
+            // 
+            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.contentsToolStripMenuItem.Text = "&Contents";
+            // 
+            // indexToolStripMenuItem
+            // 
+            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.indexToolStripMenuItem.Text = "&Index";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.searchToolStripMenuItem.Text = "&Search";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(119, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            // 
+            // MainForm
+            // 
+            this.ClientSize = new System.Drawing.Size(682, 481);
+            this.Controls.Add(this.toolStripContainer1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "MainForm";
             this.Text = "Medboss";
-            base.WindowState = FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainerMain.Panel1.ResumeLayout(false);
             this.splitContainerMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
             this.splitContainerMain.ResumeLayout(false);
-            ((ISupportInitialize) this.tabContent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).EndInit();
             this.tabContent.ResumeLayout(false);
             this.tabControlPanel5.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.RightToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.RightToolStripPanel.PerformLayout();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            base.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         private ImportOrderUIOperator initImportOrderOperator()

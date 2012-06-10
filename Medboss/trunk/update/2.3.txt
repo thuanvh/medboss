@@ -1,0 +1,35 @@
+﻿Add SoLo Text to KiemKeChiTiet
+
+qryKiemKe
+
+SELECT KiemKeThuoc.MaKiemKe, KiemKeThuoc.Ngay, Thuoc.TenThuoc, DVT.DVT, KiemKeChiTiet.SoLuong, KiemKeChiTiet.TinhTrang, KiemKeChiTiet.HanDung, KiemKeChiTiet.GhiChu, ThuocDVT.MaThuocTraoDoi, DVT.MaDVT, KiemKeThuoc.MaQuay, Quay.TenQuay, KiemKeChiTiet.DonGiaNhap, KiemKeChiTiet.DonGiaBan, LoaiKiemKe.MaLoaiKiemKe, LoaiKiemKe.TenLoaiKiemKe, LoaiThuoc.MaLoai, LoaiThuoc.TenLoai, KiemKeChiTiet.STT, KiemKeChiTiet.SoLo
+FROM LoaiThuoc INNER JOIN ((((Thuoc INNER JOIN ((KiemKeChiTiet INNER JOIN KiemKeThuoc ON KiemKeChiTiet.MaKiemKe = KiemKeThuoc.MaKiemKe) INNER JOIN ThuocDVT ON KiemKeChiTiet.MaThuocTraoDoi = ThuocDVT.MaThuocTraoDoi) ON Thuoc.MaThuoc = ThuocDVT.MaThuoc) INNER JOIN DVT ON ThuocDVT.MaDVT = DVT.MaDVT) INNER JOIN Quay ON KiemKeThuoc.MaQuay = Quay.MaQuay) INNER JOIN LoaiKiemKe ON KiemKeThuoc.MaLoaiKiemKe = LoaiKiemKe.MaLoaiKiemKe) ON LoaiThuoc.MaLoai = Thuoc.MaLoaiThuoc;
+
+qryKiemKe_Time
+
+SELECT KiemKeThuoc.MaKiemKe, KiemKeThuoc.Ngay, Thuoc.TenThuoc, DVT.DVT, KiemKeChiTiet.SoLuong, KiemKeChiTiet.TinhTrang, KiemKeChiTiet.HanDung, KiemKeChiTiet.GhiChu, ThuocDVT.MaThuocTraoDoi, DVT.MaDVT, qryNgayKiemKe.MaQuay, Quay.TenQuay, KiemKeChiTiet.DonGiaNhap, KiemKeChiTiet.DonGiaBan, LoaiKiemKe.Huy, LoaiThuoc.TenLoai, LoaiThuoc.MaLoai, KiemKeChiTiet.SoLo
+FROM LoaiThuoc INNER JOIN (((((Thuoc INNER JOIN ((KiemKeChiTiet INNER JOIN KiemKeThuoc ON KiemKeChiTiet.MaKiemKe = KiemKeThuoc.MaKiemKe) INNER JOIN ThuocDVT ON KiemKeChiTiet.MaThuocTraoDoi = ThuocDVT.MaThuocTraoDoi) ON Thuoc.MaThuoc = ThuocDVT.MaThuoc) INNER JOIN DVT ON ThuocDVT.MaDVT = DVT.MaDVT) INNER JOIN qryNgayKiemKe ON (KiemKeThuoc.MaQuay = qryNgayKiemKe.MaQuay) AND (KiemKeThuoc.Ngay = qryNgayKiemKe.NgayKiemKe)) INNER JOIN Quay ON KiemKeThuoc.MaQuay = Quay.MaQuay) INNER JOIN LoaiKiemKe ON KiemKeThuoc.MaLoaiKiemKe = LoaiKiemKe.MaLoaiKiemKe) ON LoaiThuoc.MaLoai = Thuoc.MaLoaiThuoc
+WHERE (((LoaiKiemKe.Huy)=False));
+
+qryKiemKe_Time2
+
+SELECT KiemKeThuoc.MaKiemKe, KiemKeThuoc.Ngay, Thuoc.TenThuoc, DVT.DVT, KiemKeChiTiet.SoLuong, KiemKeChiTiet.TinhTrang, KiemKeChiTiet.HanDung, KiemKeChiTiet.GhiChu, ThuocDVT.MaThuocTraoDoi, DVT.MaDVT, qryNgayKiemKe2.MaQuay AS MaQuay, Quay.TenQuay, KiemKeChiTiet.DonGiaNhap, KiemKeChiTiet.DonGiaBan, LoaiKiemKe.Huy, LoaiThuoc.TenLoai, LoaiThuoc.MaLoai, KiemKeChiTiet.SoLo
+FROM qryNgayKiemKe2, LoaiThuoc INNER JOIN ((((Thuoc INNER JOIN ((KiemKeChiTiet INNER JOIN KiemKeThuoc ON KiemKeChiTiet.MaKiemKe=KiemKeThuoc.MaKiemKe) INNER JOIN ThuocDVT ON KiemKeChiTiet.MaThuocTraoDoi=ThuocDVT.MaThuocTraoDoi) ON Thuoc.MaThuoc=ThuocDVT.MaThuoc) INNER JOIN DVT ON ThuocDVT.MaDVT=DVT.MaDVT) INNER JOIN Quay ON KiemKeThuoc.MaQuay=Quay.MaQuay) INNER JOIN LoaiKiemKe ON KiemKeThuoc.MaLoaiKiemKe=LoaiKiemKe.MaLoaiKiemKe) ON LoaiThuoc.MaLoai=Thuoc.MaLoaiThuoc
+WHERE (((Quay.TenQuay)=[TenQuayPara]) AND ((LoaiKiemKe.Huy)=False));
+
+qryKiemKeBatThuong
+
+SELECT KiemKeThuoc.MaKiemKe, KiemKeThuoc.Ngay, Thuoc.TenThuoc, DVT.DVT, KiemKeChiTiet.SoLuong, KiemKeChiTiet.TinhTrang, KiemKeChiTiet.HanDung, KiemKeChiTiet.GhiChu, ThuocDVT.MaThuocTraoDoi, DVT.MaDVT, KiemKeThuoc.MaQuay, Quay.TenQuay, KiemKeChiTiet.DonGiaNhap, KiemKeChiTiet.DonGiaBan, KiemKeChiTiet.SoLo
+FROM ((Thuoc INNER JOIN ((KiemKeChiTiet INNER JOIN KiemKeThuoc ON KiemKeChiTiet.MaKiemKe = KiemKeThuoc.MaKiemKe) INNER JOIN ThuocDVT ON KiemKeChiTiet.MaThuocTraoDoi = ThuocDVT.MaThuocTraoDoi) ON Thuoc.MaThuoc = ThuocDVT.MaThuoc) INNER JOIN DVT ON ThuocDVT.MaDVT = DVT.MaDVT) INNER JOIN Quay ON KiemKeThuoc.MaQuay = Quay.MaQuay
+WHERE (((KiemKeChiTiet.DonGiaNhap)>=[DonGiaBan]));
+
+qryKiemKeChiTiet
+
+SELECT KiemKeThuoc.MaKiemKe, KiemKeThuoc.Ngay, Thuoc.TenThuoc, DVT.DVT, KiemKeChiTiet.SoLuong, KiemKeChiTiet.TinhTrang, KiemKeChiTiet.HanDung, KiemKeChiTiet.GhiChu, ThuocDVT.MaThuocTraoDoi, DVT.MaDVT, KiemKeThuoc.MaQuay, Quay.TenQuay, KiemKeChiTiet.DonGiaNhap, KiemKeChiTiet.DonGiaBan, LoaiKiemKe.TenLoaiKiemKe, LoaiKiemKe.Huy, LoaiThuoc.MaLoai, LoaiThuoc.TenLoai, KiemKeChiTiet.SoLo
+FROM LoaiThuoc INNER JOIN ((((Thuoc INNER JOIN ((KiemKeChiTiet INNER JOIN KiemKeThuoc ON KiemKeChiTiet.MaKiemKe = KiemKeThuoc.MaKiemKe) INNER JOIN ThuocDVT ON KiemKeChiTiet.MaThuocTraoDoi = ThuocDVT.MaThuocTraoDoi) ON Thuoc.MaThuoc = ThuocDVT.MaThuoc) INNER JOIN DVT ON ThuocDVT.MaDVT = DVT.MaDVT) INNER JOIN Quay ON KiemKeThuoc.MaQuay = Quay.MaQuay) INNER JOIN LoaiKiemKe ON KiemKeThuoc.MaLoaiKiemKe = LoaiKiemKe.MaLoaiKiemKe) ON LoaiThuoc.MaLoai = Thuoc.MaLoaiThuoc;
+
+qryNhapThuocSauKiemKe
+
+SELECT HoaDonNhap.Ngay, Quay.TenQuay, Thuoc.TenThuoc, DVT.DVT, HoaDonNhap.ChietKhau, HoaDonNhap.TienNo, NhapThuocChiTiet.DonGiaNhap, NhapThuocChiTiet.SoLuong, NhapThuocChiTiet.SoLo, NhapThuocChiTiet.HanDung, NhapThuocChiTiet.GhiChu, Quay.MaQuay, DVT.MaDVT, ThuocDVT.MaThuocTraoDoi, qryNgayKiemKe.NgayKiemKe, LoaiThuoc.MaLoai, LoaiThuoc.TenLoai, NhapThuocChiTiet.SoLo
+FROM ((((ThuocDVT INNER JOIN Thuoc ON ThuocDVT.MaThuoc=Thuoc.MaThuoc) INNER JOIN ((HoaDonNhap INNER JOIN Quay ON HoaDonNhap.MaQuay=Quay.MaQuay) INNER JOIN NhapThuocChiTiet ON HoaDonNhap.MaHoaDon=NhapThuocChiTiet.MaHoaDon) ON ThuocDVT.MaThuocTraoDoi=NhapThuocChiTiet.MaThuocTraoDoi) INNER JOIN DVT ON ThuocDVT.MaDVT=DVT.MaDVT) INNER JOIN qryNgayKiemKe ON HoaDonNhap.MaQuay=qryNgayKiemKe.MaQuay) INNER JOIN LoaiThuoc ON Thuoc.MaLoaiThuoc=LoaiThuoc.MaLoai
+WHERE (((HoaDonNhap.Ngay) Between qryNgayKiemKe.NgayKiemKe And [qryNhapThuocSauKiemKe_ToiNgay]));
