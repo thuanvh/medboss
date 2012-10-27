@@ -252,33 +252,35 @@ namespace Nammedia.Medboss
             System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê theo tên thuốc", 1, 1);
             System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê theo trang", 1, 1);
             System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê mẫu", 1, 1);
-            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Thuốc tồn", 3, 3);
-            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Kiểm kê", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Báo cáo kiểm kê đơn giản");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Thuốc tồn", 3, 3);
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Kiểm kê", new System.Windows.Forms.TreeNode[] {
             treeNode41,
             treeNode42,
             treeNode43,
             treeNode44,
             treeNode45,
-            treeNode46});
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Nhập thông tin luân chuyển", 3, 3);
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Báo cáo luân chuyển thuốc", 1, 1);
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Báo cáo luân chuyển thuốc tổng hợp", 1, 1);
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Luân chuyển thuốc", new System.Windows.Forms.TreeNode[] {
-            treeNode48,
+            treeNode46,
+            treeNode47});
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Nhập thông tin luân chuyển", 3, 3);
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Báo cáo luân chuyển thuốc", 1, 1);
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Báo cáo luân chuyển thuốc tổng hợp", 1, 1);
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Luân chuyển thuốc", new System.Windows.Forms.TreeNode[] {
             treeNode49,
-            treeNode50});
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Tìm kiếm chi tiết", 4, 4);
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Tìm kiếm", 4, 4, new System.Windows.Forms.TreeNode[] {
-            treeNode52});
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Quản lý danh sách nhân viên", 3, 3);
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Nhân viên", new System.Windows.Forms.TreeNode[] {
-            treeNode54});
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Quản lý danh sách khách hàng", 3, 3);
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Nhóm khách hàng", 3, 3);
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Khách hàng", new System.Windows.Forms.TreeNode[] {
-            treeNode56,
-            treeNode57});
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Thông tin về Medboss", 2, 2);
+            treeNode50,
+            treeNode51});
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Tìm kiếm chi tiết", 4, 4);
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Tìm kiếm", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode53});
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Quản lý danh sách nhân viên", 3, 3);
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Nhân viên", new System.Windows.Forms.TreeNode[] {
+            treeNode55});
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Quản lý danh sách khách hàng", 3, 3);
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Nhóm khách hàng", 3, 3);
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Khách hàng", new System.Windows.Forms.TreeNode[] {
+            treeNode57,
+            treeNode58});
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Thông tin về Medboss", 2, 2);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -641,66 +643,70 @@ namespace Nammedia.Medboss
             treeNode45.Name = "ndBaoCaoKiemKeMau";
             treeNode45.SelectedImageIndex = 1;
             treeNode45.Text = "Báo cáo kiểm kê mẫu";
-            treeNode46.ImageIndex = 3;
-            treeNode46.Name = "ndThuocTon";
-            treeNode46.SelectedImageIndex = 3;
-            treeNode46.Text = "Thuốc tồn";
-            treeNode47.Name = "ndKiemKe";
-            treeNode47.Text = "Kiểm kê";
-            treeNode48.ImageIndex = 3;
-            treeNode48.Name = "ndNhapThongTinChuyenQuay";
-            treeNode48.SelectedImageIndex = 3;
-            treeNode48.Text = "Nhập thông tin luân chuyển";
-            treeNode49.ImageIndex = 1;
-            treeNode49.Name = "ndBaoCaoLuanChuyenThuoc";
-            treeNode49.SelectedImageIndex = 1;
-            treeNode49.Text = "Báo cáo luân chuyển thuốc";
+            treeNode46.ImageIndex = 1;
+            treeNode46.Name = "ndBaoCaoKiemKeDonGian";
+            treeNode46.Text = "Báo cáo kiểm kê đơn giản";
+            treeNode46.ToolTipText = "Báo cáo kiểm kê đơn giản";
+            treeNode47.ImageIndex = 3;
+            treeNode47.Name = "ndThuocTon";
+            treeNode47.SelectedImageIndex = 3;
+            treeNode47.Text = "Thuốc tồn";
+            treeNode48.Name = "ndKiemKe";
+            treeNode48.Text = "Kiểm kê";
+            treeNode49.ImageIndex = 3;
+            treeNode49.Name = "ndNhapThongTinChuyenQuay";
+            treeNode49.SelectedImageIndex = 3;
+            treeNode49.Text = "Nhập thông tin luân chuyển";
             treeNode50.ImageIndex = 1;
-            treeNode50.Name = "ndBaoCaoLuanChuyenThuocTongHop";
+            treeNode50.Name = "ndBaoCaoLuanChuyenThuoc";
             treeNode50.SelectedImageIndex = 1;
-            treeNode50.Text = "Báo cáo luân chuyển thuốc tổng hợp";
-            treeNode51.Name = "ndChuyenQuay";
-            treeNode51.Text = "Luân chuyển thuốc";
-            treeNode52.ImageIndex = 4;
-            treeNode52.Name = "ndTimKiemChiTiet";
-            treeNode52.SelectedImageIndex = 4;
-            treeNode52.Text = "Tìm kiếm chi tiết";
+            treeNode50.Text = "Báo cáo luân chuyển thuốc";
+            treeNode51.ImageIndex = 1;
+            treeNode51.Name = "ndBaoCaoLuanChuyenThuocTongHop";
+            treeNode51.SelectedImageIndex = 1;
+            treeNode51.Text = "Báo cáo luân chuyển thuốc tổng hợp";
+            treeNode52.Name = "ndChuyenQuay";
+            treeNode52.Text = "Luân chuyển thuốc";
             treeNode53.ImageIndex = 4;
-            treeNode53.Name = "ndTimKiem";
+            treeNode53.Name = "ndTimKiemChiTiet";
             treeNode53.SelectedImageIndex = 4;
-            treeNode53.Text = "Tìm kiếm";
-            treeNode54.ImageIndex = 3;
-            treeNode54.Name = "ndQuanLyDanhSachNhanVien";
-            treeNode54.SelectedImageIndex = 3;
-            treeNode54.Text = "Quản lý danh sách nhân viên";
-            treeNode55.Name = "ndNhanVien";
-            treeNode55.Text = "Nhân viên";
-            treeNode56.ImageIndex = 3;
-            treeNode56.Name = "ndQuanLyDanhSachKhachHang";
-            treeNode56.SelectedImageIndex = 3;
-            treeNode56.Text = "Quản lý danh sách khách hàng";
+            treeNode53.Text = "Tìm kiếm chi tiết";
+            treeNode54.ImageIndex = 4;
+            treeNode54.Name = "ndTimKiem";
+            treeNode54.SelectedImageIndex = 4;
+            treeNode54.Text = "Tìm kiếm";
+            treeNode55.ImageIndex = 3;
+            treeNode55.Name = "ndQuanLyDanhSachNhanVien";
+            treeNode55.SelectedImageIndex = 3;
+            treeNode55.Text = "Quản lý danh sách nhân viên";
+            treeNode56.Name = "ndNhanVien";
+            treeNode56.Text = "Nhân viên";
             treeNode57.ImageIndex = 3;
-            treeNode57.Name = "ndNhomKhachHang";
+            treeNode57.Name = "ndQuanLyDanhSachKhachHang";
             treeNode57.SelectedImageIndex = 3;
-            treeNode57.Text = "Nhóm khách hàng";
-            treeNode58.Name = "ndKhachHang";
-            treeNode58.Text = "Khách hàng";
-            treeNode59.ImageIndex = 2;
-            treeNode59.Name = "ndAbout";
-            treeNode59.SelectedImageIndex = 2;
-            treeNode59.Text = "Thông tin về Medboss";
+            treeNode57.Text = "Quản lý danh sách khách hàng";
+            treeNode58.ImageIndex = 3;
+            treeNode58.Name = "ndNhomKhachHang";
+            treeNode58.SelectedImageIndex = 3;
+            treeNode58.Text = "Nhóm khách hàng";
+            treeNode59.Name = "ndKhachHang";
+            treeNode59.Text = "Khách hàng";
+            treeNode60.ImageIndex = 2;
+            treeNode60.Name = "ndAbout";
+            treeNode60.SelectedImageIndex = 2;
+            treeNode60.Text = "Thông tin về Medboss";
             this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode13,
             treeNode23,
             treeNode29,
             treeNode32,
             treeNode40,
-            treeNode47,
-            treeNode51,
-            treeNode53,
-            treeNode55,
-            treeNode58,
-            treeNode59});
+            treeNode48,
+            treeNode52,
+            treeNode54,
+            treeNode56,
+            treeNode59,
+            treeNode60});
             this.trvMenu.SelectedImageIndex = 0;
             this.trvMenu.Size = new System.Drawing.Size(652, 449);
             this.trvMenu.TabIndex = 0;
@@ -1293,6 +1299,15 @@ namespace Nammedia.Medboss
                     operator15.ParamManager = new KiemKeParaManager();
                     this.eventBinding(operator15);
                     item = this.AddNewTab(operator15, selectedNode.Name);
+                    break;
+                }
+                case "ndBaoCaoKiemKeDonGian":
+                {
+                    ReportViewOperator operator15DonGian = new ReportViewOperator("BaoCaoKiemKeDonGian");
+                    operator15DonGian.Report = new rptKiemKeDonGian();
+                    operator15DonGian.ParamManager = new KiemKeParaManager();
+                    this.eventBinding(operator15DonGian);
+                    item = this.AddNewTab(operator15DonGian, selectedNode.Name);
                     break;
                 }
                 case "ndBaoCaoKiemKeMau":
